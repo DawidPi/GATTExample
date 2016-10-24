@@ -1,0 +1,1 @@
+"./BTPSKRNL.o" "./BTPSVEND.o" "./BTVS.o" "./HAL.o" "./HCITRANS.o" "./HFPDemo.o" "./Main.o" "./TivaWareLib.o" "./tm4c123gh6pge_startup_ccs_gcc.o" "./dk-tm4c123g/startup_ccs.o" -Wl,-T"../tm4c123gh6pge.lds" "C:/ti/Connectivity/CC256X BT/CC256x M4 Bluetopia SDK/v1.2 R2/Cortex_M4/Sample/HFPDemo/NoOS/startup/dk_tm4c123g/linker_ccs.cmd" -Wl,--start-group -lc -Wl,--end-group 

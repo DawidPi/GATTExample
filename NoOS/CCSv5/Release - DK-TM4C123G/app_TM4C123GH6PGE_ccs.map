@@ -1,0 +1,1809 @@
+******************************************************************************
+                  TI ARM Linker PC v15.12.3                    
+******************************************************************************
+>> Linked Thu Oct 20 21:05:06 2016
+
+OUTPUT FILE NAME:   <HFPDemo.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0001d889
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  0001df86  0002207a  R  X
+  SRAM                  20000000   00008000  000057c4  0000283c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    0001df8c   0001df8c    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00016724   00016724    r-x *
+  00016990    00016990    000072e6   000072e6    r-x .text
+  0001dc78    0001dc78    0000023c   0000023c    r-- .const
+  0001deb8    0001deb8    000000d4   000000d4    r-- .cinit
+20000000    20000000    000057c4   00000000    rw-
+  20000000    20000000    00004e9c   00000000    rw- .bss
+  20004e9c    20004e9c    000007d0   00000000    rw- .stack
+  2000566c    2000566c    00000158   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     startup_ccs.obj (.intvecs)
+
+*          0    0000026c    00016724     
+                  0000026c    00001093     BTPSVEND.obj (.patch)
+                  000012ff    00000001     --HOLE-- [fill = 0]
+                  00001300    0000099a     Bluetopia_FP.lib : SCO.o (i.HCI_Event_Callback)
+                  00001c9a    00000706                      : SDP.o (i.L2CA_Event_Callback)
+                  000023a0    000006b4                      : GAP.o (i.HCI_Event_Callback)
+                  00002a54    00000698     SS1BTHFP_FP.lib : HFRE.o (i.SPP_Event_Callback)
+                  000030ec    00000654     Bluetopia_FP.lib : HCI.o (i.AsynchronousHCIEventCallback)
+                  00003740    000005c4                      : RFCOMM.o (i.ProcessRFCOMMControlMessage)
+                  00003d04    00000500                      : L2CAP.o (i.HCI_Event_Callback)
+                  00004204    000003d6                      : L2CAP.o (i.ProcessL2CAPDataPacket)
+                  000045da    00000002                      : BSC.o (i.BSC_ReleaseListLock)
+                  000045dc    000003b8                      : RFCOMM.o (i.L2CA_Event_Callback)
+                  00004994    0000038e                      : SPP.o (i.RFCOMM_Event_Callback)
+                  00004d22    00000002                      : BSC.o (i.BSC_UnLockBluetoothStack)
+                  00004d24    0000030c                      : BSC.o (i.BSC_Initialize)
+                  00005030    000002ac                      : SCO.o (i.SCO_Setup_Synchronous_Connection)
+                  000052dc    0000029e                      : RFCOMM.o (i.ProcessRFCOMMDataMessage)
+                  0000557a    00000292                      : SDP.o (i.ParseAPIAttributes)
+                  0000580c    0000028c                      : HCIDrv.o (i.HCI_DriverCallback)
+                  00005a98    00000274                      : SCO.o (i.SCO_Accept_Synchronous_Connection)
+                  00005d0c    00000272     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCurrentCallsListData)
+                  00005f7e    0000026a     Bluetopia_FP.lib : SDP.o (i.ProcessServiceSearchAttributeRequest)
+                  000061e8    00000238     SS1BTHFP_FP.lib : HFRE.o (i.AddHandsFreeControlIndicators)
+                  00006420    00000236     Bluetopia_FP.lib : SPP.o (i.SPP_Data_Write)
+                  00006656    0000022e                      : L2CAP.o (i.LP_ConnectCfm)
+                  00006884    00000224                      : HCI.o (i.HCI_Initialize)
+                  00006aa8    00000220                      : SCO.o (i.SCO_Initialize)
+                  00006cc8    0000021a                      : HCI.o (i.UpdateHCICallbackThread)
+                  00006ee2    00000002                      : HCID.o (i.CleanupCertificateModule)
+                  00006ee4    0000020c                      : L2CAP.o (i.L2CAP_ConfigRequestEvent)
+                  000070f0    00000208                      : L2CAP.o (i.L2CAP_Initialize)
+                  000072f8    00000208                      : HCIComm.o (i.ProtocolEventCallback)
+                  00007500    00000202                      : SPP.o (i.BuildPortInformationStructure)
+                  00007702    000001fe                      : SDP.o (i.CompareServiceRecordWithServiceList)
+                  00007900    000001ee                      : SCO.o (i.HCI_SCO_Callback)
+                  00007aee    000001ec     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData)
+                  00007cda    000001e4     Bluetopia_FP.lib : SPP.o (i.SPP_Register_SDP_Record)
+                  00007ebe    000001d8                      : GAP.o (i.GAPInquiryEventHandler)
+                  00008096    000001d8                      : HCIComm.o (i.HCITR_COMDataCallback_UART)
+                  0000826e    000001d6                      : SPP.o (i.BuildRemotePortNegotiationStructure)
+                  00008444    000001c4     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_Success)
+                  00008608    000001c0                     : HFRE.o (i.HFRE_Open_HandsFree_Server_Port)
+                  000087c8    000001c0                     : HFRE.o (i.ProcessCommandResponseData_IndicatorControl)
+                  00008988    000001c0     Bluetopia_FP.lib : L2CAP.o (i.ProcessSendQueueData)
+                  00008b48    000001bc     SS1BTHFP_FP.lib : HFRE.o (i.SCO_Connection_Callback)
+                  00008d04    000001b8     Bluetopia_FP.lib : RFCOMM.o (i.Disconnect)
+                  00008ebc    000001b0     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_Error)
+                  0000906c    000001ac     Bluetopia_FP.lib : SDP.o (i.ProcessServiceAttributeRequest)
+                  00009218    0000019c                      : SDP.o (i.ProcessServiceSearchRequest)
+                  000093b4    0000018c                      : GAP.o (i.GAP_Set_Discoverability_Mode)
+                  00009540    0000018c                      : TWUART.o (i.TWUART_ReceiveBytes)
+                  000096cc    0000018c                      : L2CAP.o (i._L2CA_Config_Request)
+                  00009858    0000018a                      : L2CAP.o (i.L2CAP_RequestTimeout)
+                  000099e2    00000002                      : OTP.o (i.OTP_Cleanup)
+                  000099e4    00000184                      : L2CAP.o (i.L2CAP_ConnectRequestEvent)
+                  00009b68    0000017c                      : L2CAP.o (i.LP_ConnectCfmNeg)
+                  00009ce4    0000017c                      : RFCOMM.o (i.RFCOMMServerSABMMessageHandler)
+                  00009e60    00000178                      : GAP.o (i.GAP_Authentication_Response)
+                  00009fd8    00000174                      : HCI.o (i.HCI_Send_Raw_Command)
+                  0000a14c    00000168                      : L2CAP.o (i.HCI_ACL_Data_Callback)
+                  0000a2b4    00000168                      : L2CAP.o (i.ParseOptionsToAPI)
+                  0000a41c    00000164                      : GAP.o (i.GAP_Initiate_Bonding)
+                  0000a580    00000164                      : SPP.o (i.SendQueuedData)
+                  0000a6e4    0000015e                      : L2CAP.o (i.LP_DisconnectCfm)
+                  0000a842    0000015e                      : SPP.o (i.SPPServerHandler)
+                  0000a9a0    0000015c                      : TWUART.o (i.ProcessReceivedPacket)
+                  0000aafc    00000158                      : HCI.o (i.HCIInquiryEventHandler)
+                  0000ac54    00000154                      : HCIDrv.o (i.HCI_SendPacket)
+                  0000ada8    00000154     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Register_HandsFree_SDP_Record)
+                  0000aefc    00000152                     : HFRE.o (i.ProcessIndicatorSupportedResponse)
+                  0000b04e    00000150                     : HFRE.o (i.ProcessCommandResponseData_CallHoldMultipartyHandling)
+                  0000b19e    00000002     Bluetopia_FP.lib : BSC.o (i.ReleaseBluetoothStackInformation)
+                  0000b1a0    0000014c                      : SDP.o (i.SDP_Create_Service_Record)
+                  0000b2ec    00000144                      : SDP.o (i.ParseRecordAttributes)
+                  0000b430    00000140                      : GAP.o (i.GAP_Perform_Inquiry)
+                  0000b570    0000013e     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_CallerIdentificationNotification)
+                  0000b6ae    00000002     --HOLE-- [fill = 0]
+                  0000b6b0    0000013c                     : HFRE.o (i.SCO_Connect_Request_Callback)
+                  0000b7ec    00000138                     : HFRE.o (.constdata)
+                  0000b924    0000012e                     : HFRE.o (i.ProcessCommandResponseData_IndicatorChangeEvent)
+                  0000ba52    00000002     --HOLE-- [fill = 0]
+                  0000ba54    00000120                     : HFRE.o (i.HFRE_Send_Available_Codecs)
+                  0000bb74    00000120     Bluetopia_FP.lib : L2CAP.o (i.L2CAP_ConnectResponseEvent)
+                  0000bc94    00000110                      : GAPLE.o (i.GAP_LE_Initialize)
+                  0000bda4    0000010e                      : SCO.o (i.SCO_Send_Data)
+                  0000beb2    00000108                      : L2CAP.o (i.CheckQueuedDataWrite)
+                  0000bfba    00000104     SS1BTHFP_FP.lib : HFRE.o (i.ProcessSubscriberNumberInformationData)
+                  0000c0be    00000102     Bluetopia_FP.lib : GAP.o (i.GAPBondingEventHandler)
+                  0000c1c0    00000102                      : SDP.o (i.ParseAttributeIDList)
+                  0000c2c2    00000102                      : SPP.o (i.SPP_Data_Read)
+                  0000c3c4    00000100                      : RFCOMM.o (.constdata)
+                  0000c4c4    000000fe                      : HCI.o (i.SendDataPacket)
+                  0000c5c2    000000fe                      : RFCOMM.o (i._RFCOMM_Send_Data_With_Credits)
+                  0000c6c0    000000fc                      : HCIComm.o (i.OpenComm)
+                  0000c7bc    000000f8                      : RFCOMM.o (i.RFCOMM_Data_Write)
+                  0000c8b4    000000f8                      : SCO.o (i.SCO_Close_Connection)
+                  0000c9ac    000000f8                      : SCO.o (i._HCI_Event_Callback)
+                  0000caa4    000000f4     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Enable_Remote_Indicator_Event_Notification)
+                  0000cb98    000000f2     Bluetopia_FP.lib : HCI.o (i.HCILEScanningEventHandler)
+                  0000cc8a    000000f2                      : SDP.o (i.ParseAPIUUIDs)
+                  0000cd7c    000000f2     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_NetworkOperatorSelection)
+                  0000ce6e    000000f2     Bluetopia_FP.lib : SDP.o (i.SDP_Add_Attribute)
+                  0000cf60    000000f0     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Enable_Remote_Call_Line_Identification_Notification)
+                  0000d050    000000f0     Bluetopia_FP.lib : L2CAP.o (i.L2CAP_ConfigRequestResponse)
+                  0000d140    000000ec                      : L2CAP.o (i.L2CA_Get_Link_Connection_State)
+                  0000d22c    000000e8     SS1BTHFP_FP.lib : HFRE.o (.conststring)
+                  0000d314    000000e8     Bluetopia_FP.lib : TWUART.o (i.ProcessTWUARTMessage)
+                  0000d3fc    000000e4                      : GAP.o (i.GAP_Query_Remote_Device_Name)
+                  0000d4e0    000000e4                      : RFCOMM.o (i.RFCOMMServerPNMessageHandler)
+                  0000d5c4    000000e0     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Close_Port)
+                  0000d6a4    000000e0                     : HFRE.o (i.HFRE_Setup_Audio_Connection)
+                  0000d784    000000e0                     : HFRE.o (i.ProcessInputStream)
+                  0000d864    000000e0     Bluetopia_FP.lib : SPP.o (i.SPP_Open_Server_Port)
+                  0000d944    000000e0                      : HCIDrv.o (i.SendHCIPacketToLowerDriver)
+                  0000da24    000000dc     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Send_Select_Codec)
+                  0000db00    000000dc     Bluetopia_FP.lib : L2CAP.o (i.ParseAPIOptions)
+                  0000dbdc    000000dc                      : SPP.o (i.SPP_Send_Break)
+                  0000dcb8    000000d8                      : HCIComm.o (i.ReconfigureComm)
+                  0000dd90    000000d6                      : GAP.o (i.GAP_Set_Pairability_Mode)
+                  0000de66    00000002     --HOLE-- [fill = 0]
+                  0000de68    000000d4     SS1BTHFP_FP.lib : HFRE.o (i.Initiate_SCO_Connection)
+                  0000df3c    000000d4     Bluetopia_FP.lib : L2CAP.o (i.L2CAP_InformationRequestResponse)
+                  0000e010    000000d0                      : GAP.o (i.GAP_Initialize)
+                  0000e0e0    000000d0                      : SDP.o (i.ParseServiceSearchPattern)
+                  0000e1b0    000000cc     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Query_Remote_Call_Holding_Multiparty_Service_Support)
+                  0000e27c    000000cc     Bluetopia_FP.lib : RFCOMM.o (i._RFCOMM_Parameter_Negotiation_Response)
+                  0000e348    000000cc                      : RFCOMM.o (i._RFCOMM_Release_Request)
+                  0000e414    000000ca                      : SCO.o (i.SCO_Add_Connection)
+                  0000e4de    000000ca                      : SPP.o (i.SPP_Port_Status)
+                  0000e5a8    000000c8                      : TWUART.o (i.SendSLIPPacket)
+                  0000e670    000000c4                      : HCIDrv.o (i.HCI_OpenDriver)
+                  0000e734    000000c2                      : L2CAP.o (i.L2CAP_ConfigResponseEvent)
+                  0000e7f6    000000c2     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_ResponseHold)
+                  0000e8b8    000000c0     Bluetopia_FP.lib : L2CAP.o (i.HandleChannelDisconnection)
+                  0000e978    000000c0     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_BluetoothCodecSelect)
+                  0000ea38    000000c0     Bluetopia_FP.lib : RFCOMM.o (i.RFCOMM_Initialize)
+                  0000eaf8    000000c0                      : RFCOMM.o (i.SendFormattedControlMessage)
+                  0000ebb8    000000bc                      : L2CAP.o (i.L2CAP_ConnectRequestResponse)
+                  0000ec74    000000bc                      : HCI.o (i._HCI_Accept_Synchronous_Connection_Request)
+                  0000ed30    000000ba                      : RFCOMM.o (i.RFCOMM_SignalTimeout)
+                  0000edea    00000002     --HOLE-- [fill = 0]
+                  0000edec    000000b8     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Query_Remote_Control_Indicator_Status)
+                  0000eea4    000000b8                     : HFRE.o (i.ProcessCommandResponseData_CallWaitingNotification)
+                  0000ef5c    000000b8     Bluetopia_FP.lib : SDP.o (i.SDP_Initialize)
+                  0000f014    000000b8                      : HCI.o (i._HCI_Setup_Synchronous_Connection)
+                  0000f0cc    000000b8                      : L2CAP.o (i._L2CA_Enhanced_Data_Write)
+                  0000f184    000000b4     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Close_Server_Port)
+                  0000f238    000000b4                     : HFRE.o (i.ProcessCommandResponseData_AttachPhoneNumber)
+                  0000f2ec    000000b4     Bluetopia_FP.lib : HCIComm.o (i.SendCommPacket)
+                  0000f3a0    000000b2                      : GAP.o (i.GAP_Cancel_Bonding)
+                  0000f452    000000b2                      : TWUART.o (i.TWUART_Reconfigure)
+                  0000f504    000000b0                      : L2CAP.o (i._L2CA_Connect_Response)
+                  0000f5b4    000000ae     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_SupportedFeatures)
+                  0000f662    00000002     --HOLE-- [fill = 0]
+                  0000f664    000000ac     Bluetopia_FP.lib : TWUART.o (i.TWUART_Initialize)
+                  0000f710    000000aa                      : GAP.o (i.GAP_Authenticate_Remote_Device)
+                  0000f7ba    00000002     --HOLE-- [fill = 0]
+                  0000f7bc    000000a8                      : SDP.o (i.GetNextServiceAttribute)
+                  0000f864    000000a4     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Hang_Up_Call)
+                  0000f908    000000a4     Bluetopia_FP.lib : L2CAP.o (i.LP_ConnectIndication)
+                  0000f9ac    000000a4     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_VoiceRecognitionActivation)
+                  0000fa50    000000a4     Bluetopia_FP.lib : HCI.o (i.RegisterCallback)
+                  0000faf4    000000a2                      : L2CAP.o (i.FragmentPacket)
+                  0000fb96    000000a2                      : RFCOMM.o (i._RFCOMM_Open_Response)
+                  0000fc38    000000a0                      : L2CAP.o (i.DelayedAuthenticationProcess)
+                  0000fcd8    000000a0                      : HCI.o (i.HCISCOEventHandler)
+                  0000fd78    000000a0     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Answer_Incoming_Call)
+                  0000fe18    0000009e     Bluetopia_FP.lib : L2CAP.o (i.L2CAP_EchoRequestResponse)
+                  0000feb6    00000002     --HOLE-- [fill = 0]
+                  0000feb8    0000009c                      : BSC.o (i.BSC_Shutdown)
+                  0000ff54    0000009c                      : SCO.o (i.RegisterSynchronousConnectRequestCallback)
+                  0000fff0    0000009c                      : TWUART.o (i.TWUART_TransmitBytes)
+                  0001008c    0000009c                      : HCI.o (i._HCI_Host_Number_Of_Completed_Packets)
+                  00010128    0000009c                      : HCI.o (i._HCI_Set_Event_Filter)
+                  000101c4    00000098                      : HCI.o (i.BuildAndSubmitCommandBD_ADDRByteVariable)
+                  0001025c    00000098                      : SCO.o (i.ConvertVoiceSettingsToSCO_Data_Format)
+                  000102f4    00000098                      : SCO.o (i.DispatchSCOCallbacks)
+                  0001038c    00000098                      : L2CAP.o (i.L2CAP_RejectCommand)
+                  00010424    00000098                      : BTPSTMR.o (i.UpdateAndExpireTimers)
+                  000104bc    00000098                      : RFCOMM.o (i._RFCOMM_Modem_Status)
+                  00010554    00000098                      : RFCOMM.o (i._RFCOMM_Register_Server_Channel)
+                  000105ec    00000096                      : SDP.o (i.CalculateDataTypeLength)
+                  00010682    00000096                      : HCI.o (i.HCI_Reset)
+                  00010718    00000096                      : TWUART.o (i.ParseConfigurationField)
+                  000107ae    00000094     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_InBandRingToneActivation)
+                  00010842    00000092     Bluetopia_FP.lib : GAP.o (i.GAP_Set_Encryption_Mode)
+                  000108d4    00000092                      : L2CAP.o (i.VerifyACLHeader)
+                  00010966    00000090                      : HCI.o (i.HCISendPacket)
+                  000109f6    00000002     --HOLE-- [fill = 0]
+                  000109f8    00000090     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Data_Write)
+                  00010a88    00000090     Bluetopia_FP.lib : L2CAP.o (i.L2CAP_ConnectionParameterUpdateRequestEvent)
+                  00010b18    00000090                      : L2CAP.o (i._L2CA_Disconnect_Request)
+                  00010ba8    00000090                      : RFCOMM.o (i._RFCOMM_Remote_Port_Negotiation_Response)
+                  00010c38    0000008e                      : L2CAP.o (i.L2CAP_DisconnectRequestResponse)
+                  00010cc6    0000008e                      : SDP.o (i.ProcessSDPConnectionRequest)
+                  00010d54    0000008c                      : TWUART.o (i.EncodeAndSend)
+                  00010de0    0000008c                      : HCI.o (i.HCI_Cleanup)
+                  00010e6c    0000008c                      : L2CAP.o (i.L2CAP_DataWrite)
+                  00010ef8    0000008c                      : SCO.o (i.SCO_Cleanup)
+                  00010f84    0000008c                      : HCI.o (i._HCI_Periodic_Inquiry_Mode)
+                  00011010    0000008a                      : SCO.o (i.ConvertSCO_Data_FormatToVoiceSettings)
+                  0001109a    0000008a                      : L2CAP.o (i._L2CA_Config_Response)
+                  00011124    00000088                      : L2CAP.o (i.CreateNewIdentifierEntry)
+                  000111ac    00000088                      : HCILL.o (i.HCILL_TransmitBytes)
+                  00011234    00000086                      : SCO.o (i.CalculateHCISCOConfiguration)
+                  000112ba    00000086                      : L2CAP.o (i.L2CAP_DisconnectRequestEvent)
+                  00011340    00000084                      : RFCOMM.o (i.DisconnectChannel)
+                  000113c4    00000084                      : L2CAP.o (i.L2CAP_ReceiveTimeout)
+                  00011448    00000084                      : SPP.o (i.SPP_Initialize)
+                  000114cc    00000084                      : HCI.o (i._HCI_Remote_Name_Request)
+                  00011550    00000082                      : SPP.o (i.SPP_Line_Status)
+                  000115d2    00000002     --HOLE-- [fill = 0]
+                  000115d4    00000080                      : HCILL.o (i.HCILL_ReceiveBytes)
+                  00011654    00000080                      : L2CAP.o (i.L2CAP_InformationResponseEvent)
+                  000116d4    00000080                      : TWUART.o (i.SendReliablePacket)
+                  00011754    00000080                      : TWUART.o (i.SetTWUARTState)
+                  000117d4    00000080                      : HCI.o (i._HCI_Create_Connection)
+                  00011854    0000007e                      : BSC.o (i.BSC_AuthenticateDevice)
+                  000118d2    0000007e                      : GAP.o (i.GAP_Cleanup)
+                  00011950    0000007c                      : HCI.o (i.BuildAndSubmitCommandByteVariable)
+                  000119cc    0000007c                      : L2CAP.o (i.L2CA_Register_Fixed_Channel)
+                  00011a48    0000007c                      : HCIDrv.o (i.RegisterCallback)
+                  00011ac4    0000007c                      : HCI.o (i._HCI_Change_Local_Name)
+                  00011b40    0000007c                      : HCI.o (i._HCI_Remote_OOB_Data_Request_Reply)
+                  00011bbc    0000007a                      : L2CAP.o (i.L2CAP_ConnectionParameterUpdateResponseEvent)
+                  00011c36    00000002     --HOLE-- [fill = 0]
+                  00011c38    00000078                      : L2CAP.o (i.CreateNewChannel)
+                  00011cb0    00000078                      : L2CAP.o (i.EnhancedFragmentPacket)
+                  00011d28    00000078                      : GAP.o (i.GAP_Query_Local_Device_Name)
+                  00011da0    00000078                      : HCI.o (i._HCI_Inquiry)
+                  00011e18    00000076     SS1BTHFP_FP.lib : HFRE.o (i.AddHFREControlIndicatorEntry)
+                  00011e8e    00000076     Bluetopia_FP.lib : RFCOMM.o (i.RFCOMM_Control_Message)
+                  00011f04    00000076                      : SDP.o (i.SDP_Delete_Service_Record)
+                  00011f7a    00000002     --HOLE-- [fill = 0]
+                  00011f7c    00000074     SS1BTHFP_FP.lib : HFRE.o (i.HFRE_Release_Audio_Connection)
+                  00011ff0    00000074     Bluetopia_FP.lib : L2CAP.o (i.L2CAP_Cleanup)
+                  00012064    00000072                      : SPP.o (i.CleanupPortInformationEntry)
+                  000120d6    00000072                      : L2CAP.o (i.L2CAP_EchoResponseEvent)
+                  00012148    00000070                      : BSC.o (i.BSC_DisableFeature)
+                  000121b8    00000070                      : BTPSTMR.o (i.BTPS_StartTimer)
+                  00012228    00000070                      : HCIDrv.o (i.HCI_CloseDriver)
+                  00012298    00000070                      : HCI.o (i.SynchronousHCICommandCallback)
+                  00012308    00000070                      : L2CAP.o (i._L2CA_Flush_Channel_Data)
+                  00012378    0000006e                      : L2CAP.o (i.L2CAP_DisconnectResponseEvent)
+                  000123e6    0000006e                      : TWUART.o (i.RetransmitTimerExpired)
+                  00012454    0000006c                      : BSC.o (i.BSC_AddGenericListEntry)
+                  000124c0    0000006c                      : HCI.o (i.BuildAndSubmitCommandThreeWords)
+                  0001252c    0000006a                      : GAPLE.o (i.GAP_LE_Enable)
+                  00012596    0000006a                      : SPP.o (i.SPP_Close_Server_Port)
+                  00012600    00000068                      : RFCOMM.o (i.RFCOMMCleanupHandler)
+                  00012668    00000068                      : SDP.o (i.WriteAttributeRequestContinuationInformation)
+                  000126d0    00000066                      : L2CAP.o (i.L2CAP_StateTimeout)
+                  00012736    00000064                      : L2CAP.o (i.LP_DisconnectReq)
+                  0001279a    00000064     SS1BTHFP_FP.lib : HFRE.o (i.ProcessCommandResponseData_MicrophoneGain)
+                  000127fe    00000064                     : HFRE.o (i.ProcessCommandResponseData_SpeakerGain)
+                  00012862    00000064                     : HFRE.o (i.ProcessUnknownCommandResponseData)
+                  000128c6    00000064     Bluetopia_FP.lib : SCO.o (i.SCO_Un_Register_Callback)
+                  0001292a    00000062                      : HCI.o (i.HCI_Schedule_Asynchronous_Callback)
+                  0001298c    00000062                      : SDP.o (i.ProcessConnectionError)
+                  000129ee    00000062                      : RFCOMM.o (i.RFCOMM_Start_Link_Negotiation)
+                  00012a50    00000060                      : BSC.o (i.AdjustSharedBuffer)
+                  00012ab0    00000060                      : BSC.o (i.BSC_DeleteGenericListEntry)
+                  00012b10    00000060                      : HCI.o (i.BuildAndSubmitCommandBD_ADDRByte)
+                  00012b70    00000060                      : HCIDrv.o (i.HCI_CancelPacket)
+                  00012bd0    00000060                      : HCIDrv.o (i.HCI_ReconfigureDriver)
+                  00012c30    00000060                      : SDP.o (i.NormalizeUUID)
+                  00012c90    00000060                      : SDP.o (i.ScanAPIAttributesForUUID)
+                  00012cf0    0000005e                      : SPP.o (i.SPP_Respond_Port_Information)
+                  00012d4e    0000005c                      : HCIDrv.o (i.AddPacketQueueEntry)
+                  00012daa    00000002     --HOLE-- [fill = 0]
+                  00012dac    0000005c                      : HCIDrv.o (i.HCI_UnRegisterCallback)
+                  00012e08    0000005c                      : GAP.o (i.IssueRemoteNameCallback)
+                  00012e64    0000005c                      : TWUART.o (i.SendQueuedPackets)
+                  00012ec0    0000005c                      : TWUART.o (i.SendTWUARTMessage)
+                  00012f1c    0000005c                      : HCI.o (i._HCI_Read_Local_Name)
+                  00012f78    0000005a     SS1BTHFP_FP.lib : HFRE.o (i.SearchHFREControlIndicatorEntryByName)
+                  00012fd2    00000058     Bluetopia_FP.lib : SDP.o (i.AddServiceAttributeEntry)
+                  0001302a    00000058                      : BSC.o (i.BSC_EnableFeature)
+                  00013082    00000058                      : GAP.o (i.BSC_Event_Callback)
+                  000130da    00000058                      : SDP.o (i.CalculateAttributeRequestParameters)
+                  00013132    00000058                      : HCI.o (i.HCIRemoteNameEventHandler)
+                  0001318a    00000058                      : TWUART.o (i.TWUART_Resynchronize)
+                  000131e2    00000058                      : SDP.o (i.WriteDataElementSequenceHeader)
+                  0001323a    00000056                      : SDP.o (i.AddUnsignedInteger4Bytes)
+                  00013290    00000056                      : GAP.o (i.GAP_End_Bonding)
+                  000132e6    00000056                      : SDP.o (i.SendConnectionResponse)
+                  0001333c    00000054                      : SDP.o (.constdata)
+                  00013390    00000054                      : BTPSTMR.o (i.BTPS_StopTimer)
+                  000133e4    00000054                      : HCI.o (i.BuildAndSubmitCommandWordByte)
+                  00013438    00000054                      : GAP.o (i.GAP_Set_Connectability_Mode)
+                  0001348c    00000054                      : HCIComm.o (i.InitializeProtocol)
+                  000134e0    00000054                      : HCI.o (i._HCI_Read_Local_Version_Information)
+                  00013534    00000052                      : L2CAP.o (i.DeleteChannelInfoEntry)
+                  00013586    00000052                      : L2CAP.o (i.DispatchFixedChannelConnectDisconnect)
+                  000135d8    00000052                      : SDP.o (i.ReadDataElementSequenceLength)
+                  0001362a    00000052                      : TWUART.o (i.SetTWUARTTimer)
+                  0001367c    00000052                      : HCI.o (i._HCI_User_Passkey_Request_Reply)
+                  000136ce    00000052                      : L2CAP.o (i._L2CA_Register_PSM)
+                  00013720    00000050                      : HCIDrv.o (i.CleanupHCIDriver)
+                  00013770    00000050     SS1BTHFP_FP.lib : HFRE.o (i.DetermineHighestSupportedAudioConnectionState)
+                  000137c0    00000050     Bluetopia_FP.lib : GAPLE.o (i.GAP_LE_Advertising_Disable)
+                  00013810    00000050                      : HCI.o (i._HCI_IO_Capability_Request_Reply)
+                  00013860    00000050                      : HCI.o (i._HCI_Read_Buffer_Size)
+                  000138b0    0000004c                      : GAPLE.o (i.AcquireGAPStackInfo)
+                  000138fc    0000004c                      : HCI.o (i.BuildAndSubmitCommandWord)
+                  00013948    0000004c     SS1BTHFP_FP.lib : HFRE.o (i.ProcessGainParameterData)
+                  00013994    0000004c     Bluetopia_FP.lib : SCO.o (i.SCO_Query_Data_Format)
+                  000139e0    0000004c                      : L2CAP.o (i.SearchFixedChannelInfoEntry)
+                  00013a2c    0000004c     SS1BTHFP_FP.lib : HFRE.o (i.StringToUnsignedInteger)
+                  00013a78    0000004c     Bluetopia_FP.lib : HCI.o (i._HCI_LE_Set_Scan_Enable)
+                  00013ac4    0000004a                      : SDP.o (i.UpdateServiceRecordStateAttribute)
+                  00013b0e    0000004a                      : RFCOMM.o (i._L2CA_Event_Callback)
+                  00013b58    00000048                      : BTPSTMR.o (i.BTPS_ChangeTimer)
+                  00013ba0    00000048                      : HCI.o (i.BuildAndSubmitCommandByte)
+                  00013be8    00000048                      : HCIComm.o (i.CleanupCOMMList)
+                  00013c30    00000048                      : BSC.o (i.CompareListEntryKeys)
+                  00013c78    00000048                      : HCIDrv.o (i.HCI_ChangeSCOConfiguration)
+                  00013cc0    00000048                      : SCO.o (i._HCI_SCO_Callback)
+                  00013d08    00000048                      : RFCOMM.o (i._RFCOMM_Line_Status_Change)
+                  00013d50    00000048                      : RFCOMM.o (i._RFCOMM_Set_System_Parameters)
+                  00013d98    00000046                      : BSC.o (i.BSC_AddGenericListEntry_Actual)
+                  00013dde    00000046                      : GAP.o (i.FormatAndDispatchEncryptionChangeEvent)
+                  00013e24    00000044                      : HCIComm.o (i.CloseComm)
+                  00013e68    00000044                      : GAP.o (i.GAPRemoteNameEventHandler)
+                  00013eac    00000044                      : BTPSTMR.o (i.GetNextTimerID)
+                  00013ef0    00000044                      : SDP.o (i.SDP_Cleanup)
+                  00013f34    00000044                      : L2CAP.o (i.SearchConnectionInfoEntryByBD_ADDRType)
+                  00013f78    00000042                      : GAP.o (i.AcquireGAPStackACLInfo)
+                  00013fba    00000042                      : SPP.o (i.AcquireSPPStackPortInformation)
+                  00013ffc    00000042                      : RFCOMM.o (i.AddRFCOMMMessageInfoEntry)
+                  0001403e    00000042                      : RFCOMM.o (i.FormatAndDispatchOpenConfirmationEvent)
+                  00014080    00000042                      : HCI.o (i.HCILEAdvertisingEventHandler)
+                  000140c2    00000042                      : L2CAP.o (i.L2CA_Set_Link_Connection_Configuration)
+                  00014104    00000042                      : RFCOMM.o (i.RemoveRFCOMMMessageInfoEntryByTEIAndMessage)
+                  00014146    00000002     --HOLE-- [fill = 0]
+                  00014148    00000040                      : BTPSTMR.o (i.BTPS_InitializeTimerModule)
+                  00014188    00000040                      : GAPLE.o (i.GAP_LE_Cancel_Scan)
+                  000141c8    00000040                      : HCID.o (i.GetAccess)
+                  00014208    00000040                      : SPP.o (i.SPP_Close_Port)
+                  00014248    00000040                      : HCI.o (i._HCI_LE_Set_Advertise_Enable)
+                  00014288    00000040                      : HCI.o (i._HCI_Write_Current_IAC_LAP)
+                  000142c8    0000003e                      : HCI.o (i.BuildEventBD_ADDRVariableData)
+                  00014306    0000003e                      : L2CAP.o (i.FreeL2CAPContextInformation)
+                  00014344    0000003c                      : BSC.o (.constdata)
+                  00014380    0000003c                      : HCI.o (i.BuildEventByteWordWord)
+                  000143bc    0000003c                      : GAP.o (i.FormatAndDispatchAuthenticationEvent)
+                  000143f8    0000003c                      : L2CAP.o (i.FormatEventInformationConfirmation)
+                  00014434    0000003c                      : GAP.o (i.GAP_Query_Connection_Handle)
+                  00014470    0000003c                      : HCI.o (i.HCI_Command_Supported)
+                  000144ac    0000003c                      : HCIDrv.o (i.HCI_ProcessHCIDriverInformation)
+                  000144e8    0000003c                      : GAP.o (i.IssueBondingCallback)
+                  00014524    0000003c                      : HCI.o (i._HCI_Delete_Stored_Link_Key)
+                  00014560    0000003a                      : HCI.o (i.AsynchronousACLDataCallback)
+                  0001459a    0000003a                      : HCI.o (i.AsynchronousSCODataCallback)
+                  000145d4    0000003a                      : HCI.o (i.HCI_Reconfigure_Driver)
+                  0001460e    0000003a                      : HCI.o (i._HCI_Link_Key_Request_Reply)
+                  00014648    0000003a                      : HCI.o (i._HCI_PIN_Code_Request_Reply)
+                  00014682    0000003a                      : HCI.o (i._HCI_Read_Local_Supported_Features)
+                  000146bc    00000038                      : BSC.o (i.CalculateBufferOffset)
+                  000146f4    00000038                      : HCIComm.o (i.ChangeCommSCOConfiguration)
+                  0001472c    00000038                      : SDP.o (i.CleanupSDPConnection)
+                  00014764    00000038                      : BSC.o (i.CompareBluetoothAddress)
+                  0001479c    00000038                      : L2CAP.o (i.L2CAP_ProcessACLQueue)
+                  000147d4    00000038                      : RFCOMM.o (i.RFCOMM_Control)
+                  0001480c    00000038                      : HCI.o (i._HCI_LE_Read_Buffer_Size)
+                  00014844    00000038                      : HCI.o (i._HCI_Read_BD_ADDR)
+                  0001487c    00000038                      : HCI.o (i._HCI_Read_LE_Host_Supported)
+                  000148b4    00000038                      : HCI.o (i._HCI_Read_Local_Supported_Commands)
+                  000148ec    00000038                      : HCI.o (i._HCI_Write_LE_Host_Supported)
+                  00014924    00000036                      : RFCOMM.o (i.AddRFCOMMChannelInfoEntry)
+                  0001495a    00000036                      : BSC.o (i.BSC_SearchGenericListEntry)
+                  00014990    00000036                      : HCI.o (i.BuildEventByteBD_ADDRByte)
+                  000149c6    00000036                      : SCO.o (i.DispatchTransmitBufferEmptyEvent)
+                  000149fc    00000036                      : SDP.o (i.FormatResponsePDUHeaderAndSend)
+                  00014a32    00000036                      : GOEP.o (i.GOEP_Initialize)
+                  00014a68    00000036                      : L2CAP.o (i.L2CAP_ConnectionTimeout)
+                  00014a9e    00000036                      : HCI.o (i._HCI_Read_Class_of_Device)
+                  00014ad4    00000036                      : SPP.o (i._RFCOMM_Event_Callback)
+                  00014b0a    00000034                      : HCI.o (i.BuildEventBD_ADDRDWord)
+                  00014b3e    00000034                      : L2CAP.o (i.FormatEventConfigConfirmation)
+                  00014b72    00000034                      : GAPLE.o (i.FreeSecurityManagerResources)
+                  00014ba6    00000034                      : GAPLE.o (i.GAP_LE_Cleanup)
+                  00014bda    00000034                      : BSC.o (i.QuerySharedBuffer)
+                  00014c0e    00000034                      : RFCOMM.o (i.SearchRFCOMMChannelInfoEntryByTEIAndDLCI)
+                  00014c42    00000034                      : HCI.o (i._HCI_Accept_Connection_Request)
+                  00014c76    00000034                      : HCI.o (i._HCI_IO_Capability_Request_Negative_Reply)
+                  00014caa    00000034                      : HCI.o (i._HCI_Reject_Connection_Request)
+                  00014cde    00000034                      : HCI.o (i._HCI_Send_Keypress_Notification)
+                  00014d12    00000032                      : GAP.o (i.FormatAndDispatchAuthenticationStatusEvent)
+                  00014d44    00000032                      : SPP.o (i.FormatAndDispatchEventPortInformation)
+                  00014d76    00000032                      : RFCOMM.o (i.FormatAndDispatchEventTEIDLCIByte)
+                  00014da8    00000032                      : RFCOMM.o (i.FormatAndDispatchFlowEvent)
+                  00014dda    00000032                      : GAP.o (i.FormatAndDispatchInquiryEvent)
+                  00014e0c    00000032                      : GAP.o (i.GAP_Register_Remote_Authentication)
+                  00014e3e    00000032                      : HCI.o (i.HCI_Change_SCO_Configuration_Handles)
+                  00014e70    00000032                      : HCI.o (i.HCI_Delete_Stored_Link_Key)
+                  00014ea2    00000032                      : HCI.o (i._HCI_LE_Read_White_List_Size)
+                  00014ed4    00000032                      : HCI.o (i._HCI_Read_Scan_Enable)
+                  00014f06    00000032                      : HCI.o (i._HCI_Read_Simple_Pairing_Mode)
+                  00014f38    00000032                      : HCI.o (i._HCI_Read_Voice_Setting)
+                  00014f6a    00000032                      : HCI.o (i._HCI_Set_Event_Mask)
+                  00014f9c    00000032                      : HCI.o (i._HCI_Write_Automatic_Flush_Timeout)
+                  00014fce    00000032                      : HCI.o (i._HCI_Write_Class_of_Device)
+                  00015000    00000032                      : HCI.o (i._HCI_Write_Link_Supervision_Timeout)
+                  00015032    00000002     --HOLE-- [fill = 0]
+                  00015034    00000030                      : HCIComm.o (.constdata)
+                  00015064    00000030                      : TWUART.o (i.CalculateCRC)
+                  00015094    00000030                      : L2CAP.o (i.CleanupChannel)
+                  000150c4    00000030                      : HCIDrv.o (i.HCI_ChangeSCOConfigurationHandles)
+                  000150f4    00000030                      : HCI.o (i.HCI_Set_Event_Filter)
+                  00015124    00000030                      : HCI.o (i.ParseInquiryResultRSSI)
+                  00015154    00000030                      : RFCOMM.o (i.SearchRFCOMMMessageInfoEntryByMessageTEIAndDLCI)
+                  00015184    00000030                      : HCI.o (i._HCI_Create_Connection_Cancel)
+                  000151b4    00000030                      : HCI.o (i._HCI_Link_Key_Request_Negative_Reply)
+                  000151e4    00000030                      : HCI.o (i._HCI_PIN_Code_Request_Negative_Reply)
+                  00015214    00000030                      : HCI.o (i._HCI_Remote_OOB_Data_Request_Negative_Reply)
+                  00015244    00000030                      : HCI.o (i._HCI_User_Confirmation_Request_Negative_Reply)
+                  00015274    00000030                      : HCI.o (i._HCI_User_Confirmation_Request_Reply)
+                  000152a4    00000030                      : HCI.o (i._HCI_User_Passkey_Request_Negative_Reply)
+                  000152d4    0000002e                      : L2CAP.o (i.AcquireL2CAPStackInformation)
+                  00015302    0000002e                      : RFCOMM.o (i.AcquireRFCOMMStackInformation)
+                  00015330    0000002e                      : HCI.o (i.BuildCommandHeader)
+                  0001535e    0000002e                      : HCI.o (i.BuildEventByteWordByte)
+                  0001538c    0000002e                      : L2CAP.o (i.DeleteConnectionInfoEntry)
+                  000153ba    0000002e                      : L2CAP.o (i.DeleteIdentifierInfoEntryByIdentifier)
+                  000153e8    0000002e                      : L2CAP.o (i.FormatEventEchoConfirmation)
+                  00015416    0000002e                      : SDP.o (i.FreeL2CAPConnectionInfoList)
+                  00015444    0000002e                      : GAP.o (i.GAP_Query_Class_Of_Device)
+                  00015472    0000002e                      : GAP.o (i.GAP_Query_Local_BD_ADDR)
+                  000154a0    0000002e                      : GAP.o (i.GAP_Set_Local_Device_Name)
+                  000154ce    0000002e                      : TWUART.o (i.TWUART_Shutdown)
+                  000154fc    0000002e                      : HCI.o (i._HCI_Disconnect)
+                  0001552a    0000002e                      : GAPLE.o (i._HCI_Event_Callback)
+                  00015558    0000002e                      : HCI.o (i._HCI_Read_Remote_Extended_Features)
+                  00015586    0000002e                      : HCI.o (i._HCI_Set_Connection_Encryption)
+                  000155b4    0000002e                      : GAPLE.o (i._L2CA_Event_Callback)
+                  000155e2    0000002e                      : RFCOMM.o (i._RFCOMM_Un_Register_Server_Channel)
+                  00015610    0000002c                      : SPP.o (i.CalculateCreditThreshold)
+                  0001563c    0000002c                      : SPP.o (i.FormatAndDispatchEventBD_ADDR)
+                  00015668    0000002c                      : HCIDrv.o (i.FreeDriverStructureResources)
+                  00015694    0000002c                      : HCI.o (i.HCI_Read_Local_Supported_Features)
+                  000156c0    0000002c                      : HCI.o (i.HCI_Version_Supported)
+                  000156ec    0000002c                      : RFCOMM.o (i.RFCOMM_Cleanup)
+                  00015718    0000002c                      : HCI.o (i._HCI_Authentication_Requested)
+                  00015744    0000002c                      : HCI.o (i._HCI_Flush)
+                  00015770    0000002c                      : HCI.o (i._HCI_Write_Default_Link_Policy_Settings)
+                  0001579c    0000002c                      : HCI.o (i._HCI_Write_Encryption_Mode)
+                  000157c8    0000002c                      : HCI.o (i._HCI_Write_SCO_Flow_Control_Enable)
+                  000157f4    0000002c                      : HCI.o (i._HCI_Write_Scan_Enable)
+                  00015820    0000002c                      : HCI.o (i._HCI_Write_Simple_Pairing_Mode)
+                  0001584c    0000002c                      : HCI.o (i._HCI_Write_Voice_Setting)
+                  00015878    0000002a                      : GAP.o (i.AcquireGAPLEContext)
+                  000158a2    0000002a                      : TWUART.o (i.CheckIdle)
+                  000158cc    0000002a                      : HCI.o (i.DetermineLEControllerSupport)
+                  000158f6    0000002a                      : SPP.o (i.FormatAndDispatchEventUnsignedInteger)
+                  00015920    0000002a                      : HCIComm.o (i.FreeCOMStructureResources)
+                  0001594a    0000002a                      : SPP.o (i.FreePortInformationEntryMemory)
+                  00015974    0000002a                      : GOEP.o (i.GOEP_Cleanup)
+                  0001599e    0000002a                      : HCILL.o (i.HCILL_Initialize)
+                  000159c8    0000002a                      : HCI.o (i.HCI_Change_SCO_Configuration)
+                  000159f2    0000002a                      : SPP.o (i.SPP_Cleanup)
+                  00015a1c    0000002a                      : HCI.o (i._HCI_Enable_Device_Under_Test_Mode)
+                  00015a46    00000002     --HOLE-- [fill = 0]
+                  00015a48    00000028                      : TWUART.o (.constdata)
+                  00015a70    00000028                      : BSC.o (i.AcquireBluetoothStackInformation)
+                  00015a98    00000028                      : GAP.o (i.AcquireGAPStackInformation)
+                  00015ac0    00000028                      : SDP.o (i.AcquireSDPStackInformation)
+                  00015ae8    00000028                      : SPP.o (i.AcquireSPPStackInformation)
+                  00015b10    00000028                      : SDP.o (i.DispatchSDPConnectionEvent)
+                  00015b38    00000028                      : L2CAP.o (i.FreeConnectionInfoList)
+                  00015b60    00000028                      : L2CAP.o (i.FreeIdentifierInfoList)
+                  00015b88    00000028                      : SDP.o (i.FreeServiceRecordList)
+                  00015bb0    00000028                      : HCI.o (i.HCI_Enable_Device_Under_Test_Mode)
+                  00015bd8    00000028                      : HCI.o (i.HCI_Write_Default_Link_Policy_Settings)
+                  00015c00    00000028                      : HCI.o (i.HCI_Write_SCO_Flow_Control_Enable)
+                  00015c28    00000028                      : HCI.o (i.HCI_Write_Scan_Enable)
+                  00015c50    00000028                      : HCI.o (i.HCI_Write_Voice_Setting)
+                  00015c78    00000028                      : L2CAP.o (i.HandleReadDataError)
+                  00015ca0    00000028                      : RFCOMM.o (i.SearchRFCOMMServerInfoEntryByTEI)
+                  00015cc8    00000026                      : TWUART.o (i.AcknowledgeTimerExpired)
+                  00015cee    00000026                      : L2CAP.o (i.AddConnectionInfoEntry)
+                  00015d14    00000026     SS1BTHFP_FP.lib : HFRE.o (i.AddHFREEntry)
+                  00015d3a    00000026     Bluetopia_FP.lib : BSC.o (i.BSC_RegisterEventCallback)
+                  00015d60    00000026                      : GAP.o (i.Discoverability_Timeout_Callback)
+                  00015d86    00000026                      : L2CAP.o (i.FormatEventMemberStatus)
+                  00015dac    00000026                      : BSC.o (i.FreeBSCTimerEntryList)
+                  00015dd2    00000026                      : GAP.o (i.GAP_Set_Class_Of_Device)
+                  00015df8    00000026                      : HCI.o (i.HCI_Build_ACL_Packet_Type_Mask)
+                  00015e1e    00000026                      : HCI.o (i.MailboxDeleteDataCallback)
+                  00015e44    00000026                      : RFCOMM.o (i.RemoveRFCOMMChannelInfoEntry)
+                  00015e6a    00000026                      : TWUART.o (i.SetTransportConfiguration)
+                  00015e90    00000026                      : HCILL.o (i.TransmitData)
+                  00015eb6    00000024                      : L2CAP.o (i.FormatEventConnectConfirmation)
+                  00015eda    00000024                      : SDP.o (i.FreeConnectionInfoList)
+                  00015efe    00000024                      : GAPLE.o (i.FreeLELinkEntryMemory)
+                  00015f22    00000024                      : HCI.o (i.HCI_Query_LE_Controller_Support)
+                  00015f46    00000002     --HOLE-- [fill = 0]
+                  00015f48    00000024                      : HCIComm.o (i.ProcessComm)
+                  00015f6c    00000024                      : RFCOMM.o (i.SearchRFCOMMMessageInfoEntryByTEIAndDLCI)
+                  00015f90    00000024                      : BSC.o (i.VerifySharedBufferPointer)
+                  00015fb4    00000022                      : GOEP.o (i.FreePortInfoEntryMemory)
+                  00015fd6    00000020                      : BSC.o (i.BSC_GetNextGenericListEntry)
+                  00015ff6    00000020                      : BSC.o (i.BSC_QueryActiveFeatures)
+                  00016016    00000002     --HOLE-- [fill = 0]
+                  00016018    00000020                      : BTPSTMR.o (i.BTPS_CleanupTimerModule)
+                  00016038    00000020                      : RFCOMM.o (i.CalculateFCS)
+                  00016058    00000020                      : BSC.o (i.CompareNULLBluetoothAddress)
+                  00016078    00000020                      : HCILL.o (i.HCILL_Reconfigure)
+                  00016098    00000020                      : HCILL.o (i.HCILL_Shutdown)
+                  000160b8    00000020                      : TWUART.o (i.RestartPacketizer)
+                  000160d8    00000020                      : HCILL.o (i.SendQueuedPackets)
+                  000160f8    00000020                      : L2CAP.o (i._L2CA_Disconnect_Response)
+                  00016118    0000001e                      : GAP.o (.constdata)
+                  00016136    0000001e                      : BSC.o (i.BSC_FreeGenericListEntryList)
+                  00016154    0000001e                      : HCI.o (i.BuildEventHeader)
+                  00016172    0000001e     SS1BTHFP_FP.lib : HFRE.o (i.CheckStartingDigit)
+                  00016190    0000001e     Bluetopia_FP.lib : L2CAP.o (i.DeleteACLPacketEntry)
+                  000161ae    0000001e                      : HCIDrv.o (i.DispatchDebugPacketCallbacks)
+                  000161cc    0000001e                      : HCILL.o (i.FreeTransmitBufferListHead)
+                  000161ea    0000001e                      : TWUART.o (i.IdleTimerExpired)
+                  00016208    0000001e                      : HCI.o (i.SetEventHandler)
+                  00016226    0000001c                      : GAP.o (i.CleanUpInquiry)
+                  00016242    0000001c                      : TWUART.o (i.FreeBufferListHead)
+                  0001625e    0000001c     SS1BTHFP_FP.lib : HFRE.o (i.FreeHFREEntryMemory)
+                  0001627a    0000001c     Bluetopia_FP.lib : GAPLE.o (i.FreeLELinkList)
+                  00016296    0000001c                      : GOEP.o (i.FreePortInfoList)
+                  000162b2    0000001c                      : SPP.o (i.FreePortInformationList)
+                  000162ce    00000002     --HOLE-- [fill = 0]
+                  000162d0    0000001c                      : L2CAP.o (i.GetNextDataIdentifier)
+                  000162ec    0000001a                      : TWUART.o (i.TransmitData)
+                  00016306    00000002     --HOLE-- [fill = 0]
+                  00016308    00000018                      : L2CAP.o (.constdata)
+                  00016320    00000018                      : BSC.o (i.InitializeBSCModule)
+                  00016338    00000018                      : HCIComm.o (i.InitializeCOMMList)
+                  00016350    00000018     SS1BTHFP_FP.lib : HFRE.o (i.InitializeHandsFreeModule)
+                  00016368    00000018     Bluetopia_FP.lib : TWUART.o (i.SendNullPacket)
+                  00016380    00000016                      : HCI.o (i.BuildEventWord)
+                  00016396    00000016     SS1BTHFP_FP.lib : HFRE.o (i.CheckDelimiterChar)
+                  000163ac    00000016     Bluetopia_FP.lib : HCI.o (i.CreditDataPacket)
+                  000163c2    00000016     SS1BTHFP_FP.lib : HFRE.o (i.DeleteHFREEntry)
+                  000163d8    00000016     Bluetopia_FP.lib : L2CAP.o (i.FormatEventDisconnectConfirmation)
+                  000163ee    00000016                      : SCO.o (i.SearchACLLinkEntryBD_ADDR)
+                  00016404    00000016     SS1BTHFP_FP.lib : HFRE.o (i.SearchHFREEntry)
+                  0001641a    00000016     Bluetopia_FP.lib : RFCOMM.o (i._RFCOMM_Send_Data)
+                  00016430    00000014                      : BTPSTMR.o (i.BTPS_ProcessAsynchronousTimers)
+                  00016444    00000014                      : HCI.o (i.BuildEventByte)
+                  00016458    00000014                      : GAP.o (i.DeleteACLLinkEntryConnection_Handle)
+                  0001646c    00000014                      : BSC.o (i.DeleteBTStackEntry)
+                  00016480    00000014                      : HCIComm.o (i.DeleteCOMEntry)
+                  00016494    00000014                      : HCI.o (i.DeleteCallbackEntry)
+                  000164a8    00000014                      : SCO.o (i.DeleteCallbackEntry)
+                  000164bc    00000014                      : GAPLE.o (i.DeleteCallbackInfoByType)
+                  000164d0    00000014                      : SDP.o (i.DeleteConnectionInfoEntryCID)
+                  000164e4    00000014                      : HCIDrv.o (i.DeletePacketQueueEntry)
+                  000164f8    00000014                      : SPP.o (i.DeletePortInformationEntry)
+                  0001650c    00000014                      : L2CAP.o (i.FormatEventDisconnectIndication)
+                  00016520    00000014                      : L2CAP.o (i.FreeChannelInfoList)
+                  00016534    00000014                      : HCIDrv.o (i.GetNextCallbackPacketID)
+                  00016548    00000014                      : SCO.o (i.GetNextConnectionID)
+                  0001655c    00000014     SS1BTHFP_FP.lib : HFRE.o (i.GetNextHFREID)
+                  00016570    00000014     Bluetopia_FP.lib : L2CAP.o (i.GetNextIDNumber)
+                  00016584    00000014                      : SPP.o (i.GetNextSerialPortID)
+                  00016598    00000014                      : HCI.o (i.HCI_Send_ACL_Data)
+                  000165ac    00000014                      : HCI.o (i.HCI_Send_SCO_Data)
+                  000165c0    00000014                      : HCIComm.o (i.ProtocolTimerCallback)
+                  000165d4    00000014                      : GAP.o (i.SearchACLLinkEntryConnection_Handle)
+                  000165e8    00000014                      : L2CAP.o (i.SearchACLPacketEntryByConnectionHandle)
+                  000165fc    00000014                      : L2CAP.o (i.SearchACLPacketEntryByIdentifier)
+                  00016610    00000014                      : BSC.o (i.SearchBTStackEntry)
+                  00016624    00000014                      : HCIComm.o (i.SearchCOMEntry)
+                  00016638    00000014                      : L2CAP.o (i.SearchChannelInfoEntry)
+                  0001664c    00000014                      : L2CAP.o (i.SearchChannelInfoEntryByConnectionHandle)
+                  00016660    00000014                      : SDP.o (i.SearchConnectionInfoEntry)
+                  00016674    00000014                      : L2CAP.o (i.SearchConnectionInfoEntryByConnectionHandle)
+                  00016688    00000014                      : HCIDrv.o (i.SearchDriverEntry)
+                  0001669c    00000014     SS1BTHFP_FP.lib : HFRE.o (i.SearchHFREControlIndicatorEntryByIndex)
+                  000166b0    00000014     Bluetopia_FP.lib : L2CAP.o (i.SearchIdentifierInfoEntryByIdentifier)
+                  000166c4    00000014                      : RFCOMM.o (i.SearchL2CAPConnectionInfoEntryByCID)
+                  000166d8    00000014                      : SPP.o (i.SearchPortInformationEntry)
+                  000166ec    00000014                      : L2CAP.o (i.SearchRegistryByValue)
+                  00016700    00000014                      : SDP.o (i.SearchServiceRecordEntry)
+                  00016714    00000014                      : BTPSTMR.o (i.UpdateTimerModule)
+                  00016728    00000012                      : GAP.o (i.AddCallbackEntry)
+                  0001673a    00000012                      : SDP.o (i.AddConnectionInfoEntry)
+                  0001674c    00000012                      : RFCOMM.o (i.AddL2CAPConnectionInfoEntry)
+                  0001675e    00000012                      : SPP.o (i.AddPortInformationEntry)
+                  00016770    00000012                      : L2CAP.o (i.AddRegistryInfoEntry)
+                  00016782    00000012                      : SDP.o (i.AddServiceRecordEntry)
+                  00016794    00000012                      : BSC.o (i.BSC_UnRegisterEventCallback)
+                  000167a6    00000012                      : L2CAP.o (i.FormatEventCIDOnly)
+                  000167b8    00000012                      : L2CAP.o (i.QueueACLPacket)
+                  000167ca    00000012                      : SDP.o (i.ServiceAttributeListValid)
+                  000167dc    00000012                      : RFCOMM.o (i._RFCOMM_Send_Credits)
+                  000167ee    00000010                      : GAP.o (i.DeleteCallbackEntry)
+                  000167fe    00000010                      : RFCOMM.o (i.RemoveL2CAPConnectionInfoEntry)
+                  0001680e    00000010                      : GAP.o (i.SearchACLLinkEntryBD_ADDR)
+                  0001681e    00000010                      : GAP.o (i.SearchCallbackEntry)
+                  0001682e    00000010                      : RFCOMM.o (i.SearchL2CAPConnectionInfoEntryByBD_ADDR)
+                  0001683e    00000010                      : HCILL.o (i.SendSleepIndication)
+                  0001684e    00000010                      : TWUART.o (i.SendSleepIndication)
+                  0001685e    0000000e                      : HCI.o (i.BuildAndSubmitCommandNoData)
+                  0001686c    0000000e                      : L2CAP.o (i._L2CA_Data_Write)
+                  0001687a    0000000a                      : BSC.o (i.BSC_FreeGenericListEntryMemory)
+                  00016884    0000000a                      : L2CAP.o (i.GetNextChannelInfoEntry)
+                  0001688e    0000000a                      : L2CAP.o (i.GetNextGroupInfoEntry)
+                  00016898    0000000a                      : RFCOMM.o (i.GetNextRFCOMMChannelInfoEntry)
+                  000168a2    0000000a                      : RFCOMM.o (i.GetNextRFCOMMServerInfoEntry)
+                  000168ac    0000000a                      : HCILL.o (i.HCILL_Resynchronize)
+                  000168b6    0000000a                      : HCIDrv.o (i.HCI_RegisterACLDataCallback)
+                  000168c0    0000000a                      : HCIDrv.o (i.HCI_RegisterEventCallback)
+                  000168ca    0000000a                      : HCIDrv.o (i.HCI_RegisterSCODataCallback)
+                  000168d4    0000000a                      : HCI.o (i.HCI_Register_ACL_Data_Callback)
+                  000168de    0000000a                      : HCI.o (i.HCI_Register_Event_Callback)
+                  000168e8    0000000a                      : HCI.o (i.HCI_Register_SCO_Data_Callback)
+                  000168f2    0000000a                      : GAP.o (i.ReleaseGAPLEContext)
+                  000168fc    0000000a                      : SCO.o (i.SCO_Register_Synchronous_Connect_Request_Callback)
+                  00016906    00000002     --HOLE-- [fill = 0]
+                  00016908    00000008                      : HCID.o (i.GetCertPtr)
+                  00016910    00000006                      : L2CAP.o (i.FreeACLDataList)
+                  00016916    00000006                      : GAP.o (i.FreeACLLinkList)
+                  0001691c    00000006                      : SCO.o (i.FreeACLLinkList)
+                  00016922    00000006                      : GAPLE.o (i.FreeCallbackInfoList)
+                  00016928    00000006                      : GAP.o (i.FreeCallbackList)
+                  0001692e    00000006                      : HCI.o (i.FreeCallbackList)
+                  00016934    00000006                      : SCO.o (i.FreeCallbackList)
+                  0001693a    00000006                      : L2CAP.o (i.FreeFixedChannelInfoList)
+                  00016940    00000006     SS1BTHFP_FP.lib : HFRE.o (i.FreeHFREControlIndicatorEntryList)
+                  00016946    00000006     Bluetopia_FP.lib : GAP.o (i.FreeInquiryResultList)
+                  0001694c    00000006                      : RFCOMM.o (i.FreeL2CAPConnectionInfoList)
+                  00016952    00000006                      : RFCOMM.o (i.FreeRFCOMMChannelInfoList)
+                  00016958    00000006                      : L2CAP.o (i.FreeRegistryInfoList)
+                  0001695e    00000006                      : SDP.o (i.FreeServiceAttributeList)
+                  00016964    00000005                      : SDP.o (.constdata)
+                  00016969    00000005                      : SDP.o (.constdata)
+                  0001696e    00000005                      : SDP.o (.constdata)
+                  00016973    00000004                      : HCILL.o (.constdata)
+                  00016977    00000001     --HOLE-- [fill = 0]
+                  00016978    00000004                      : BSC.o (i.BSC_AcquireListLock)
+                  0001697c    00000004                      : BSC.o (i.BSC_LockBluetoothStack)
+                  00016980    00000004                      : HCID.o (i.GetCertCurrentDate)
+                  00016984    00000004                      : HCID.o (i.GetCertLength)
+                  00016988    00000004                      : HCID.o (i.InitializeCertificateModule)
+                  0001698c    00000004                      : OTP.o (i.OTP_Initialize)
+
+.text      0    00016990    000072e6     
+                  00016990    00004238     HFPDemo.obj (.text)
+                  0001abc8    00000eac     BTVS.obj (.text)
+                  0001ba74    000006dc     TivaWareLib.obj (.text)
+                  0001c150    000005d0     BTPSKRNL.obj (.text)
+                  0001c720    000004a4     HCITRANS.obj (.text)
+                  0001cbc4    000003bc     HAL.obj (.text)
+                  0001cf80    0000020c     BTPSVEND.obj (.text)
+                  0001d18c    000001b0     Main.obj (.text)
+                  0001d33c    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  0001d46e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : i_div0.obj (.text)
+                  0001d470    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  0001d564    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  0001d600    0000007a                                   : memset_t2.obj (.text)
+                  0001d67a    00000002                                   : mpu_init.obj (.text)
+                  0001d67c    00000070                                   : autoinit.obj (.text)
+                  0001d6ec    0000006a                                   : copy_decompress_rle.obj (.text)
+                  0001d756    00000002                                   : startup.obj (.text)
+                  0001d758    00000068     driverlib.lib : interrupt.obj (.text:IntDisable)
+                  0001d7c0    00000068                   : interrupt.obj (.text:IntEnable)
+                  0001d828    00000060                   : timer.obj (.text:TimerConfigure)
+                  0001d888    00000054     rtsv7M4_T_le_v4SPD16_eabi.lib : boot.obj (.text)
+                  0001d8dc    00000054                                   : exit.obj (.text)
+                  0001d930    0000004c                                   : cpy_tbl.obj (.text)
+                  0001d97c    00000048     driverlib.lib : gpio.obj (.text:GPIOPinConfigure)
+                  0001d9c4    00000046                   : uart.obj (.text:UARTConfigSetExpClk)
+                  0001da0a    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : u_divt2.obj (.text)
+                  0001da4a    00000002     --HOLE-- [fill = 0]
+                  0001da4c    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  0001da80    0000002a                   : gpio.obj (.text:GPIODirModeSet)
+                  0001daaa    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : memmov.obj (.text)
+                  0001dace    00000022                                   : memcmp.obj (.text)
+                  0001daf0    00000020     driverlib.lib : uart.obj (.text:UARTDisable)
+                  0001db10    00000018                   : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  0001db28    00000018                   : timer.obj (.text:TimerDisable)
+                  0001db40    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  0001db58    00000014     driverlib.lib : uart.obj (.text:UARTEnable)
+                  0001db6c    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  0001db80    00000014                                   : strcpy.obj (.text)
+                  0001db94    00000014                                   : strlen.obj (.text)
+                  0001dba8    00000012     driverlib.lib : gpio.obj (.text:GPIOPinTypeUART)
+                  0001dbba    00000012                   : timer.obj (.text:TimerLoadSet)
+                  0001dbcc    00000012                   : timer.obj (.text:TimerPrescaleSet)
+                  0001dbde    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  0001dbee    0000000e                   : timer.obj (.text:TimerEnable)
+                  0001dbfc    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0001dc0a    0000000c     driverlib.lib : cpu.obj (.text:CPUcpsie)
+                  0001dc16    0000000c                   : uart.obj (.text:UARTFlowControlSet)
+                  0001dc22    0000000c     startup_ccs.obj (.text)
+                  0001dc2e    0000000a     driverlib.lib : uart.obj (.text:UARTIntDisable)
+                  0001dc38    0000000a                   : uart.obj (.text:UARTIntStatus)
+                  0001dc42    00000008                   : timer.obj (.text:TimerIntEnable)
+                  0001dc4a    00000008                   : uart.obj (.text:UARTIntEnable)
+                  0001dc52    00000006                   : gpio.obj (.text:GPIOPinRead)
+                  0001dc58    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  0001dc5e    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  0001dc64    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  0001dc6a    00000004     driverlib.lib : timer.obj (.text:TimerIntClear)
+                  0001dc6e    00000004                   : uart.obj (.text:UARTIntClear)
+                  0001dc72    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.obj (.text)
+
+.const     0    0001dc78    0000023c     
+                  0001dc78    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  0001dd08    00000078     HFPDemo.obj (.const:.string)
+                  0001dd80    00000070     driverlib.lib : interrupt.obj (.const)
+                  0001ddf0    00000030     TivaWareLib.obj (.const:g_psDaysToMonth)
+                  0001de20    0000002e     BTVS.obj (.const:.string:RF_Calibration_Info)
+                  0001de4e    00000026     BTVS.obj (.const:.string:SetCodec16KHzValues)
+                  0001de74    00000026     BTVS.obj (.const:.string:SetCodec8KHzValues)
+                  0001de9a    00000002     --HOLE-- [fill = 0]
+                  0001de9c    00000018     TivaWareLib.obj (.const:g_pfExponents)
+
+.cinit     0    0001deb8    000000d4     
+                  0001deb8    000000a9     (.cinit..data.load) [load image, compression = rle]
+                  0001df61    00000007     --HOLE-- [fill = 0]
+                  0001df68    0000000b     (.cinit..bss.load) [load image, compression = rle]
+                  0001df73    00000001     --HOLE-- [fill = 0]
+                  0001df74    00000008     (__TI_handler_table)
+                  0001df7c    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000000    00004e9c     UNINITIALIZED
+                  20000000    00003c04     BTPSKRNL.obj (.bss:MemoryBuffer)
+                  20003c04    00000800     HAL.obj (.bss:OutBuffer)
+                  20004404    0000063c     HCITRANS.obj (.bss:UartContext)
+                  20004a40    00000118     Bluetopia_FP.lib : BTPSTMR.o (.bss)
+                  20004b58    00000100     HFPDemo.obj (.bss:CommandTable)
+                  20004c58    00000098     HFPDemo.obj (.bss:InquiryResultList)
+                  20004cf0    00000080     BTPSKRNL.obj (.bss:SchedulerInformation)
+                  20004d70    00000040     Main.obj (.bss:Input)
+                  20004db0    0000002c     Bluetopia_FP.lib : HCI.o (.bss)
+                  20004ddc    00000020     HAL.obj (.bss:InBuffer)
+                  20004dfc    0000001c     BTPSKRNL.obj (.bss)
+                  20004e18    00000018     HFPDemo.obj (.bss)
+                  20004e30    00000018     HFPDemo.obj (.bss:LinkKeyInfo)
+                  20004e48    00000014     HAL.obj (.bss:InBuf)
+                  20004e5c    00000014     HAL.obj (.bss:OutBuf)
+                  20004e70    0000000c     HCITRANS.obj (.bss)
+                  20004e7c    00000009     BTPSVEND.obj (.bss)
+                  20004e85    00000006     HFPDemo.obj (.bss:ConnectedBD_ADDR)
+                  20004e8b    00000006     HFPDemo.obj (.bss:CurrentRemoteBD_ADDR)
+                  20004e91    00000003     --HOLE--
+                  20004e94    00000004     HAL.obj (.bss)
+                  20004e98    00000004     Main.obj (.bss)
+
+.stack     0    20004e9c    000007d0     UNINITIALIZED
+                  20004e9c    000007d0     --HOLE--
+
+.data      0    2000566c    00000158     UNINITIALIZED
+                  2000566c    0000004b     BTPSKRNL.obj (.data:Header2$3)
+                  200056b7    00000039     BTPSKRNL.obj (.data:Header1$2)
+                  200056f0    00000020     HFPDemo.obj (.data:HCIVersionStrings)
+                  20005710    00000013     BTPSKRNL.obj (.data:HexTable$1)
+                  20005723    00000001     --HOLE--
+                  20005724    00000010     Bluetopia_FP.lib : BSC.o (.data)
+                  20005734    00000010                      : BTPSTMR.o (.data)
+                  20005744    00000010     HFPDemo.obj (.data:IOCapabilitiesStrings)
+                  20005754    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.data:$O1$$)
+                  20005760    0000000c     Bluetopia_FP.lib : HCIComm.o (.data)
+                  2000576c    0000000c                      : HCIDrv.o (.data)
+                  20005778    0000000c                      : L2CAP.o (.data)
+                  20005784    0000000c                      : SDP.o (.data)
+                  20005790    0000000c     SS1BTHFP_FP.lib : HFRE.o (.data)
+                  2000579c    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.data:$O1$$)
+                  200057a4    00000008     Bluetopia_FP.lib : SCO.o (.data)
+                  200057ac    00000004     BTPSKRNL.obj (.data)
+                  200057b0    00000004     Bluetopia_FP.lib : HCI.o (.data)
+                  200057b4    00000004                      : RFCOMM.o (.data)
+                  200057b8    00000004                      : SPP.o (.data)
+                  200057bc    00000004     TivaWareLib.obj (.data)
+                  200057c0    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : stkdepth_vars.obj (.data)
+
+MODULE SUMMARY
+
+       Module                     code     ro data   rw data
+       ------                     ----     -------   -------
+    .\
+       HFPDemo.obj                16952    120       516    
+       BTPSKRNL.obj               1488     0         15675  
+       BTPSVEND.obj               524      4243      9      
+       BTVS.obj                   3756     122       0      
+       HAL.obj                    956      0         2124   
+       HCITRANS.obj               1188     0         1608   
+       TivaWareLib.obj            1756     72        4      
+       Main.obj                   432      0         68     
+    +--+--------------------------+--------+---------+---------+
+       Total:                     27052    4557      20004  
+                                                            
+    .\dk-tm4c123g\
+       startup_ccs.obj            12       620       0      
+    +--+--------------------------+--------+---------+---------+
+       Total:                     12       620       0      
+                                                            
+    C:/ti/Connectivity/CC256X BT/CC256x M4 Bluetopia SDK/v1.2 R2/Cortex_M4/Bluetopia/lib/ccs/NoOS/Bluetopia_FP.lib
+       L2CAP.o                    14276    24        12     
+       HCI.o                      11338    0         48     
+       SDP.o                      8278     99        12     
+       RFCOMM.o                   7838     256       4      
+       SCO.o                      7034     0         8      
+       GAP.o                      6626     30        0      
+       SPP.o                      5724     0         4      
+       TWUART.o                   3060     40        0      
+       HCIDrv.o                   2448     0         12     
+       BSC.o                      2306     60        16     
+       HCIComm.o                  2082     48        12     
+       BTPSTMR.o                  624      0         296    
+       GAPLE.o                    884      0         0      
+       HCILL.o                    496      4         0      
+       GOEP.o                     158      0         0      
+       HCID.o                     86       0         0      
+       OTP.o                      6        0         0      
+    +--+--------------------------+--------+---------+---------+
+       Total:                     73264    561       424    
+                                                            
+    C:/ti/Connectivity/CC256X BT/CC256x M4 Bluetopia SDK/v1.2 R2/Cortex_M4/Bluetopia/profiles/HFP/lib/ccs/SS1BTHFP_FP.lib
+       HFRE.o                     13286    544       12     
+    +--+--------------------------+--------+---------+---------+
+       Total:                     13286    544       12     
+                                                            
+    C:\ti\ccsv6\tools\compiler\arm_15.12.3.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.obj              156      0         0      
+       memset_t2.obj              122      0         0      
+       autoinit.obj               112      0         0      
+       copy_decompress_rle.obj    112      0         0      
+       exit.obj                   84       0         12     
+       boot.obj                   84       0         0      
+       cpy_tbl.obj                76       0         0      
+       u_divt2.obj                64       0         0      
+       memmov.obj                 36       0         0      
+       memcmp.obj                 34       0         0      
+       _lock.obj                  20       0         8      
+       args_main.obj              24       0         0      
+       strcpy.obj                 20       0         0      
+       strlen.obj                 20       0         0      
+       copy_decompress_none.obj   14       0         0      
+       pre_init.obj               4        0         0      
+       stkdepth_vars.obj          0        0         4      
+       i_div0.obj                 2        0         0      
+       mpu_init.obj               2        0         0      
+       startup.obj                2        0         0      
+    +--+--------------------------+--------+---------+---------+
+       Total:                     988      0         24     
+                                                            
+    C:\ti\tirex-content\TivaWare_C_Series-2.1.3.156\driverlib\ccs\Debug\driverlib.lib
+       gpio.obj                   474      144       0      
+       interrupt.obj              224      112       0      
+       sysctl.obj                 302      0         0      
+       timer.obj                  182      0         0      
+       uart.obj                   166      0         0      
+       cpu.obj                    12       0         0      
+    +--+--------------------------+--------+---------+---------+
+       Total:                     1360     256       0      
+                                                            
+       Stack:                     0        0         2000   
+       Linker Generated:          0        204       0      
+    +--+--------------------------+--------+---------+---------+
+       Grand Total:               115962   6742      22464  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 0001df7c records: 2, size/record: 8, table size: 16
+	.data: load addr=0001deb8, load size=000000a9 bytes, run addr=2000566c, run size=00000158 bytes, compression=rle
+	.bss: load addr=0001df68, load size=0000000b bytes, run addr=20000000, run size=00004e9c bytes, compression=rle
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 0001df74 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                     
+-------   ----                                                     
+00015a71  AcquireBluetoothStackInformation                         
+00015879  AcquireGAPLEContext                                      
+00012a51  AdjustSharedBuffer                                       
+00016979  BSC_AcquireListLock                                      
+00012455  BSC_AddGenericListEntry                                  
+00013d99  BSC_AddGenericListEntry_Actual                           
+00011855  BSC_AuthenticateDevice                                   
+00012ab1  BSC_DeleteGenericListEntry                               
+00012149  BSC_DisableFeature                                       
+0001302b  BSC_EnableFeature                                        
+00016137  BSC_FreeGenericListEntryList                             
+0001687b  BSC_FreeGenericListEntryMemory                           
+00015fd7  BSC_GetNextGenericListEntry                              
+00004d25  BSC_Initialize                                           
+0001697d  BSC_LockBluetoothStack                                   
+00015ff7  BSC_QueryActiveFeatures                                  
+00015d3b  BSC_RegisterEventCallback                                
+000045db  BSC_ReleaseListLock                                      
+0001495b  BSC_SearchGenericListEntry                               
+0000feb9  BSC_Shutdown                                             
+00004d23  BSC_UnLockBluetoothStack                                 
+00016795  BSC_UnRegisterEventCallback                              
+0001c6d9  BTPS_AddFunctionToScheduler                              
+0001c69d  BTPS_AddMailbox                                          
+0001c651  BTPS_AllocateMemory                                      
+00013b59  BTPS_ChangeTimer                                         
+00016019  BTPS_CleanupTimerModule                                  
+0001c65b  BTPS_CreateMailbox                                       
+0001c551  BTPS_DeInit                                              
+0001c539  BTPS_Delay                                               
+0001c4bd  BTPS_DeleteFunctionFromScheduler                         
+0001c475  BTPS_DeleteMailbox                                       
+0001c36f  BTPS_DumpData                                            
+0001c367  BTPS_ExecuteScheduler                                    
+0001c35f  BTPS_FreeMemory                                          
+0001c1b1  BTPS_GetTickCount                                        
+0001c2b9  BTPS_Init                                                
+00014149  BTPS_InitializeTimerModule                               
+0001c2b5  BTPS_MemCompare                                          
+0001c26f  BTPS_MemCompareI                                         
+0001c151  BTPS_MemCopy                                             
+0001c26b  BTPS_MemInitialize                                       
+0001c267  BTPS_MemMove                                             
+0001c235  BTPS_OutputMessage                                       
+00016431  BTPS_ProcessAsynchronousTimers                           
+0001c1c1  BTPS_ProcessScheduler                                    
+0001c1a1  BTPS_QueryMailbox                                        
+0001c19b  BTPS_SetDebugMask                                        
+000121b9  BTPS_StartTimer                                          
+00013391  BTPS_StopTimer                                           
+0001c197  BTPS_StringCopy                                          
+0001db95  BTPS_StringLength                                        
+0001c18f  BTPS_TestDebugZone                                       
+0001c155  BTPS_WaitMailbox                                         
+0001d8dd  C$$EXIT                                                  
+0001dc0b  CPUcpsie                                                 
+000146f5  ChangeCommSCOConfiguration                               
+00013be9  CleanupCOMMList                                          
+00006ee3  CleanupCertificateModule                                 
+00013e25  CloseComm                                                
+00014765  CompareBluetoothAddress                                  
+00016059  CompareNULLBluetoothAddress                              
+0001cf21  ConsoleIntHandler                                        
+0000f711  GAP_Authenticate_Remote_Device                           
+00009e61  GAP_Authentication_Response                              
+0000f3a1  GAP_Cancel_Bonding                                       
+000118d3  GAP_Cleanup                                              
+00013291  GAP_End_Bonding                                          
+0000e011  GAP_Initialize                                           
+0000a41d  GAP_Initiate_Bonding                                     
+000137c1  GAP_LE_Advertising_Disable                               
+00014189  GAP_LE_Cancel_Scan                                       
+00014ba7  GAP_LE_Cleanup                                           
+0001252d  GAP_LE_Enable                                            
+0000bc95  GAP_LE_Initialize                                        
+0000b431  GAP_Perform_Inquiry                                      
+00015445  GAP_Query_Class_Of_Device                                
+00014435  GAP_Query_Connection_Handle                              
+00015473  GAP_Query_Local_BD_ADDR                                  
+00011d29  GAP_Query_Local_Device_Name                              
+0000d3fd  GAP_Query_Remote_Device_Name                             
+00014e0d  GAP_Register_Remote_Authentication                       
+00015dd3  GAP_Set_Class_Of_Device                                  
+00013439  GAP_Set_Connectability_Mode                              
+000093b5  GAP_Set_Discoverability_Mode                             
+00010843  GAP_Set_Encryption_Mode                                  
+000154a1  GAP_Set_Local_Device_Name                                
+0000dd91  GAP_Set_Pairability_Mode                                 
+00015975  GOEP_Cleanup                                             
+00014a33  GOEP_Initialize                                          
+0001da81  GPIODirModeSet                                           
+0001d33d  GPIOPadConfigSet                                         
+0001d97d  GPIOPinConfigure                                         
+0001dc53  GPIOPinRead                                              
+0001db11  GPIOPinTypeGPIOOutput                                    
+0001dba9  GPIOPinTypeUART                                          
+0001dc59  GPIOPinWrite                                             
+000141c9  GetAccess                                                
+00016981  GetCertCurrentDate                                       
+00016985  GetCertLength                                            
+00016909  GetCertPtr                                               
+0001cec9  HAL_ButtonPressed                                        
+0001cd93  HAL_ConfigureHardware                                    
+0001cd15  HAL_ConsoleRead                                          
+0001cc65  HAL_ConsoleWrite                                         
+0001cc25  HAL_GetTickCount                                         
+0001cc17  HAL_LedOff                                               
+0001cc09  HAL_LedOn                                                
+0001cbe9  HAL_LedToggle                                            
+0001cbe5  HAL_NV_DataRead                                          
+0001cbdd  HAL_NV_DataWrite                                         
+0001599f  HCILL_Initialize                                         
+000115d5  HCILL_ReceiveBytes                                       
+00016079  HCILL_Reconfigure                                        
+000168ad  HCILL_Resynchronize                                      
+00016099  HCILL_Shutdown                                           
+000111ad  HCILL_TransmitBytes                                      
+0001cb45  HCITR_COMClose                                           
+0001ca15  HCITR_COMOpen                                            
+0001c961  HCITR_COMProcess                                         
+0001c93b  HCITR_COMReconfigure                                     
+0001c88b  HCITR_COMWrite                                           
+0001c86b  HCITR_UARTIntHandler                                     
+00015df9  HCI_Build_ACL_Packet_Type_Mask                           
+00012b71  HCI_CancelPacket                                         
+00013c79  HCI_ChangeSCOConfiguration                               
+000150c5  HCI_ChangeSCOConfigurationHandles                        
+000159c9  HCI_Change_SCO_Configuration                             
+00014e3f  HCI_Change_SCO_Configuration_Handles                     
+00010de1  HCI_Cleanup                                              
+00012229  HCI_CloseDriver                                          
+00014471  HCI_Command_Supported                                    
+00014e71  HCI_Delete_Stored_Link_Key                               
+00015bb1  HCI_Enable_Device_Under_Test_Mode                        
+00006885  HCI_Initialize                                           
+0000e671  HCI_OpenDriver                                           
+000144ad  HCI_ProcessHCIDriverInformation                          
+00015f23  HCI_Query_LE_Controller_Support                          
+00015695  HCI_Read_Local_Supported_Features                        
+00012bd1  HCI_ReconfigureDriver                                    
+000145d5  HCI_Reconfigure_Driver                                   
+000168b7  HCI_RegisterACLDataCallback                              
+000168c1  HCI_RegisterEventCallback                                
+000168cb  HCI_RegisterSCODataCallback                              
+000168d5  HCI_Register_ACL_Data_Callback                           
+000168df  HCI_Register_Event_Callback                              
+000168e9  HCI_Register_SCO_Data_Callback                           
+00010683  HCI_Reset                                                
+0001292b  HCI_Schedule_Asynchronous_Callback                       
+0000ac55  HCI_SendPacket                                           
+00016599  HCI_Send_ACL_Data                                        
+00009fd9  HCI_Send_Raw_Command                                     
+000165ad  HCI_Send_SCO_Data                                        
+000150f5  HCI_Set_Event_Filter                                     
+00012dad  HCI_UnRegisterCallback                                   
+0001d133  HCI_VS_DisableFeature                                    
+0001d0a7  HCI_VS_EnableFeature                                     
+0001d0a3  HCI_VS_InitializeAfterHCIClose                           
+0001d09f  HCI_VS_InitializeAfterHCIOpen                            
+0001d043  HCI_VS_InitializeAfterHCIReset                           
+0001cfa5  HCI_VS_InitializeBeforeHCIClose                          
+0001cf85  HCI_VS_InitializeBeforeHCIOpen                           
+0001cf81  HCI_VS_InitializeBeforeHCIReset                          
+000156c1  HCI_Version_Supported                                    
+00015bd9  HCI_Write_Default_Link_Policy_Settings                   
+00015c01  HCI_Write_SCO_Flow_Control_Enable                        
+00015c29  HCI_Write_Scan_Enable                                    
+00015c51  HCI_Write_Voice_Setting                                  
+0000fd79  HFRE_Answer_Incoming_Call                                
+0000d5c5  HFRE_Close_Port                                          
+0000f185  HFRE_Close_Server_Port                                   
+0000cf61  HFRE_Enable_Remote_Call_Line_Identification_Notification 
+0000caa5  HFRE_Enable_Remote_Indicator_Event_Notification          
+0000f865  HFRE_Hang_Up_Call                                        
+00008609  HFRE_Open_HandsFree_Server_Port                          
+0000e1b1  HFRE_Query_Remote_Call_Holding_Multiparty_Service_Support
+0000eded  HFRE_Query_Remote_Control_Indicator_Status               
+0000ada9  HFRE_Register_HandsFree_SDP_Record                       
+00011f7d  HFRE_Release_Audio_Connection                            
+0000ba55  HFRE_Send_Available_Codecs                               
+0000da25  HFRE_Send_Select_Codec                                   
+0000d6a5  HFRE_Setup_Audio_Connection                              
+0001a8f9  InitializeApplication                                    
+00016321  InitializeBSCModule                                      
+00016339  InitializeCOMMList                                       
+00016989  InitializeCertificateModule                              
+00016351  InitializeHandsFreeModule                                
+0001d759  IntDisable                                               
+0001d7c1  IntEnable                                                
+0001dbdf  IntMasterEnable                                          
+00011ff1  L2CAP_Cleanup                                            
+000070f1  L2CAP_Initialize                                         
+0000d141  L2CA_Get_Link_Connection_State                           
+000119cd  L2CA_Register_Fixed_Channel                              
+000140c3  L2CA_Set_Link_Connection_Configuration                   
+000099e3  OTP_Cleanup                                              
+0001698d  OTP_Initialize                                           
+0000c6c1  OpenComm                                                 
+00015f49  ProcessComm                                              
+0001a0a5  ProcessCommandLine                                       
+00014bdb  QuerySharedBuffer                                        
+000156ed  RFCOMM_Cleanup                                           
+0000ea39  RFCOMM_Initialize                                        
+0000dcb9  ReconfigureComm                                          
+0000b19f  ReleaseBluetoothStackInformation                         
+000168f3  ReleaseGAPLEContext                                      
+0001dc23  ResetISR                                                 
+00005a99  SCO_Accept_Synchronous_Connection                        
+0000e415  SCO_Add_Connection                                       
+00010ef9  SCO_Cleanup                                              
+0000c8b5  SCO_Close_Connection                                     
+00006aa9  SCO_Initialize                                           
+00013995  SCO_Query_Data_Format                                    
+000168fd  SCO_Register_Synchronous_Connect_Request_Callback        
+0000bda5  SCO_Send_Data                                            
+00005031  SCO_Setup_Synchronous_Connection                         
+000128c7  SCO_Un_Register_Callback                                 
+0000ce6f  SDP_Add_Attribute                                        
+00013ef1  SDP_Cleanup                                              
+0000b1a1  SDP_Create_Service_Record                                
+00011f05  SDP_Delete_Service_Record                                
+0000ef5d  SDP_Initialize                                           
+UNDEFED   SHT$$INIT_ARRAY$$Base                                    
+UNDEFED   SHT$$INIT_ARRAY$$Limit                                   
+000159f3  SPP_Cleanup                                              
+00014209  SPP_Close_Port                                           
+00012597  SPP_Close_Server_Port                                    
+0000c2c3  SPP_Data_Read                                            
+00006421  SPP_Data_Write                                           
+00011449  SPP_Initialize                                           
+00011551  SPP_Line_Status                                          
+0000d865  SPP_Open_Server_Port                                     
+0000e4df  SPP_Port_Status                                          
+00007cdb  SPP_Register_SDP_Record                                  
+00012cf1  SPP_Respond_Port_Information                             
+0000dbdd  SPP_Send_Break                                           
+0000f2ed  SendCommPacket                                           
+0001d471  SysCtlClockSet                                           
+0001dc5f  SysCtlDelay                                              
+0001da4d  SysCtlPeripheralEnable                                   
+0000f665  TWUART_Initialize                                        
+00009541  TWUART_ReceiveBytes                                      
+0000f453  TWUART_Reconfigure                                       
+0001318b  TWUART_Resynchronize                                     
+000154cf  TWUART_Shutdown                                          
+0000fff1  TWUART_TransmitBytes                                     
+0001d829  TimerConfigure                                           
+0001db29  TimerDisable                                             
+0001dbef  TimerEnable                                              
+0001dc6b  TimerIntClear                                            
+0001dc43  TimerIntEnable                                           
+0001cbc5  TimerIntHandler                                          
+0001dbbb  TimerLoadSet                                             
+0001dbcd  TimerPrescaleSet                                         
+0001d9c5  UARTConfigSetExpClk                                      
+0001daf1  UARTDisable                                              
+0001db59  UARTEnable                                               
+0001dc17  UARTFlowControlSet                                       
+0001dc6f  UARTIntClear                                             
+0001dc2f  UARTIntDisable                                           
+0001dc4b  UARTIntEnable                                            
+0001dc39  UARTIntStatus                                            
+0001ba11  VS_A3DP_Close_Stream                                     
+0001b961  VS_A3DP_Codec_Configuration                              
+0001b8f9  VS_A3DP_Multi_Room_Mode                                  
+0001b871  VS_A3DP_Open_Stream                                      
+0001b815  VS_A3DP_Sink_Close_Stream                                
+0001b773  VS_A3DP_Sink_Codec_Configuration                         
+0001b6fd  VS_A3DP_Sink_Open_Stream                                 
+0001b69d  VS_A3DP_Sink_Start_Stream                                
+0001b63d  VS_A3DP_Sink_Stop_Stream                                 
+0001b5d9  VS_A3DP_Start_Stream                                     
+0001b563  VS_A3DP_Stop_Stream                                      
+0001b4f1  VS_AVPR_Debug                                            
+0001b477  VS_AVPR_Enable                                           
+0001b3f5  VS_DisableWBS                                            
+0001b36b  VS_EnableWBS                                             
+0001b179  VS_Enable_FCC_Test_Mode                                  
+0001b115  VS_Enable_RF_SIG_Test_Mode                               
+0001b093  VS_Enable_Sleep_Mode                                     
+0001afa9  VS_PCM_Codec_Config                                      
+0001af39  VS_Set_Bluetooth_Address                                 
+0001acf1  VS_Set_Max_Output_Power                                  
+0001ac73  VS_Update_HCILL_Parameters                               
+0001abc9  VS_Update_UART_Baud_Rate                                 
+00015f91  VerifySharedBufferPointer                                
+000131e3  WriteDataElementSequenceHeader                           
+00014c43  _HCI_Accept_Connection_Request                           
+0000ec75  _HCI_Accept_Synchronous_Connection_Request               
+00015719  _HCI_Authentication_Requested                            
+00011ac5  _HCI_Change_Local_Name                                   
+000117d5  _HCI_Create_Connection                                   
+00015185  _HCI_Create_Connection_Cancel                            
+00014525  _HCI_Delete_Stored_Link_Key                              
+000154fd  _HCI_Disconnect                                          
+00015a1d  _HCI_Enable_Device_Under_Test_Mode                       
+00015745  _HCI_Flush                                               
+0001008d  _HCI_Host_Number_Of_Completed_Packets                    
+00014c77  _HCI_IO_Capability_Request_Negative_Reply                
+00013811  _HCI_IO_Capability_Request_Reply                         
+00011da1  _HCI_Inquiry                                             
+0001480d  _HCI_LE_Read_Buffer_Size                                 
+00014ea3  _HCI_LE_Read_White_List_Size                             
+00014249  _HCI_LE_Set_Advertise_Enable                             
+00013a79  _HCI_LE_Set_Scan_Enable                                  
+000151b5  _HCI_Link_Key_Request_Negative_Reply                     
+0001460f  _HCI_Link_Key_Request_Reply                              
+000151e5  _HCI_PIN_Code_Request_Negative_Reply                     
+00014649  _HCI_PIN_Code_Request_Reply                              
+00010f85  _HCI_Periodic_Inquiry_Mode                               
+00014845  _HCI_Read_BD_ADDR                                        
+00013861  _HCI_Read_Buffer_Size                                    
+00014a9f  _HCI_Read_Class_of_Device                                
+0001487d  _HCI_Read_LE_Host_Supported                              
+00012f1d  _HCI_Read_Local_Name                                     
+000148b5  _HCI_Read_Local_Supported_Commands                       
+00014683  _HCI_Read_Local_Supported_Features                       
+000134e1  _HCI_Read_Local_Version_Information                      
+00015559  _HCI_Read_Remote_Extended_Features                       
+00014ed5  _HCI_Read_Scan_Enable                                    
+00014f07  _HCI_Read_Simple_Pairing_Mode                            
+00014f39  _HCI_Read_Voice_Setting                                  
+00014cab  _HCI_Reject_Connection_Request                           
+000114cd  _HCI_Remote_Name_Request                                 
+00015215  _HCI_Remote_OOB_Data_Request_Negative_Reply              
+00011b41  _HCI_Remote_OOB_Data_Request_Reply                       
+00014cdf  _HCI_Send_Keypress_Notification                          
+00015587  _HCI_Set_Connection_Encryption                           
+00010129  _HCI_Set_Event_Filter                                    
+00014f6b  _HCI_Set_Event_Mask                                      
+0000f015  _HCI_Setup_Synchronous_Connection                        
+00015245  _HCI_User_Confirmation_Request_Negative_Reply            
+00015275  _HCI_User_Confirmation_Request_Reply                     
+000152a5  _HCI_User_Passkey_Request_Negative_Reply                 
+0001367d  _HCI_User_Passkey_Request_Reply                          
+00014f9d  _HCI_Write_Automatic_Flush_Timeout                       
+00014fcf  _HCI_Write_Class_of_Device                               
+00014289  _HCI_Write_Current_IAC_LAP                               
+00015771  _HCI_Write_Default_Link_Policy_Settings                  
+0001579d  _HCI_Write_Encryption_Mode                               
+000148ed  _HCI_Write_LE_Host_Supported                             
+00015001  _HCI_Write_Link_Supervision_Timeout                      
+000157c9  _HCI_Write_SCO_Flow_Control_Enable                       
+000157f5  _HCI_Write_Scan_Enable                                   
+00015821  _HCI_Write_Simple_Pairing_Mode                           
+0001584d  _HCI_Write_Voice_Setting                                 
+000096cd  _L2CA_Config_Request                                     
+0001109b  _L2CA_Config_Response                                    
+0000f505  _L2CA_Connect_Response                                   
+0001686d  _L2CA_Data_Write                                         
+00010b19  _L2CA_Disconnect_Request                                 
+000160f9  _L2CA_Disconnect_Response                                
+0000f0cd  _L2CA_Enhanced_Data_Write                                
+00012309  _L2CA_Flush_Channel_Data                                 
+000136cf  _L2CA_Register_PSM                                       
+00013d09  _RFCOMM_Line_Status_Change                               
+000104bd  _RFCOMM_Modem_Status                                     
+0000fb97  _RFCOMM_Open_Response                                    
+0000e27d  _RFCOMM_Parameter_Negotiation_Response                   
+00010555  _RFCOMM_Register_Server_Channel                          
+0000e349  _RFCOMM_Release_Request                                  
+00010ba9  _RFCOMM_Remote_Port_Negotiation_Response                 
+000167dd  _RFCOMM_Send_Credits                                     
+0001641b  _RFCOMM_Send_Data                                        
+0000c5c3  _RFCOMM_Send_Data_With_Credits                           
+00013d51  _RFCOMM_Set_System_Parameters                            
+000155e3  _RFCOMM_Un_Register_Server_Channel                       
+2000566c  __STACK_END                                              
+000007d0  __STACK_SIZE                                             
+2000566c  __STACK_TOP                                              
+0001df7c  __TI_CINIT_Base                                          
+0001df8c  __TI_CINIT_Limit                                         
+0001df74  __TI_Handler_Table_Base                                  
+0001df7c  __TI_Handler_Table_Limit                                 
+0001d67d  __TI_auto_init                                           
+20005754  __TI_cleanup_ptr                                         
+0001dbfd  __TI_decompress_none                                     
+0001dc65  __TI_decompress_rle24                                    
+20005758  __TI_dtors_ptr                                           
+2000575c  __TI_enable_exit_profile_output                          
+ffffffff  __TI_pprof_out_hndl                                      
+ffffffff  __TI_prof_data_size                                      
+ffffffff  __TI_prof_data_start                                     
+00000000  __TI_static_base__                                       
+0001d46f  __aeabi_idiv0                                            
+0001d601  __aeabi_memclr                                           
+0001d601  __aeabi_memclr4                                          
+0001d601  __aeabi_memclr8                                          
+0001d565  __aeabi_memcpy                                           
+0001d565  __aeabi_memcpy4                                          
+0001d565  __aeabi_memcpy8                                          
+0001d603  __aeabi_memset                                           
+0001d603  __aeabi_memset4                                          
+0001d603  __aeabi_memset8                                          
+0001da0b  __aeabi_uidiv                                            
+0001da0b  __aeabi_uidivmod                                         
+ffffffff  __binit__                                                
+ffffffff  __c_args__                                               
+0001d67b  __mpu_init                                               
+20004e9c  __stack                                                  
+0001db41  _args_main                                               
+0001d889  _c_int00                                                 
+2000579c  _lock                                                    
+0001db7b  _nop                                                     
+0001db73  _register_lock                                           
+0001db6d  _register_unlock                                         
+0001d757  _system_post_cinit                                       
+0001dc73  _system_pre_init                                         
+200057a0  _unlock                                                  
+0001d8e1  abort                                                    
+ffffffff  binit                                                    
+0001d931  copy_in                                                  
+0001d8e9  exit                                                     
+00000000  g_pfnVectors                                             
+0001d21f  main                                                     
+200057c0  main_func_sp                                             
+0001dacf  memcmp                                                   
+0001d565  memcpy                                                   
+0001daab  memmove                                                  
+0001d609  memset                                                   
+0001db81  strcpy                                                   
+0001db95  strlen                                                   
+0001bff5  ulocaltime                                               
+0001c0e9  umktime                                                  
+0001bfe1  urand                                                    
+0001bfc7  usnprintf                                                
+0001bfa7  usprintf                                                 
+0001bfa1  usrand                                                   
+0001bf99  ustrcasecmp                                              
+0001bf91  ustrcmp                                                  
+0001bebf  ustrlen                                                  
+0001bf47  ustrncasecmp                                             
+0001bed1  ustrncmp                                                 
+0001ba75  ustrncpy                                                 
+0001bf07  ustrstr                                                  
+0001bd73  ustrtof                                                  
+0001bcd1  ustrtoul                                                 
+0001ba9f  uvsnprintf                                               
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                     
+-------   ----                                                     
+00000000  __TI_static_base__                                       
+00000000  g_pfnVectors                                             
+000007d0  __STACK_SIZE                                             
+000045db  BSC_ReleaseListLock                                      
+00004d23  BSC_UnLockBluetoothStack                                 
+00004d25  BSC_Initialize                                           
+00005031  SCO_Setup_Synchronous_Connection                         
+00005a99  SCO_Accept_Synchronous_Connection                        
+00006421  SPP_Data_Write                                           
+00006885  HCI_Initialize                                           
+00006aa9  SCO_Initialize                                           
+00006ee3  CleanupCertificateModule                                 
+000070f1  L2CAP_Initialize                                         
+00007cdb  SPP_Register_SDP_Record                                  
+00008609  HFRE_Open_HandsFree_Server_Port                          
+000093b5  GAP_Set_Discoverability_Mode                             
+00009541  TWUART_ReceiveBytes                                      
+000096cd  _L2CA_Config_Request                                     
+000099e3  OTP_Cleanup                                              
+00009e61  GAP_Authentication_Response                              
+00009fd9  HCI_Send_Raw_Command                                     
+0000a41d  GAP_Initiate_Bonding                                     
+0000ac55  HCI_SendPacket                                           
+0000ada9  HFRE_Register_HandsFree_SDP_Record                       
+0000b19f  ReleaseBluetoothStackInformation                         
+0000b1a1  SDP_Create_Service_Record                                
+0000b431  GAP_Perform_Inquiry                                      
+0000ba55  HFRE_Send_Available_Codecs                               
+0000bc95  GAP_LE_Initialize                                        
+0000bda5  SCO_Send_Data                                            
+0000c2c3  SPP_Data_Read                                            
+0000c5c3  _RFCOMM_Send_Data_With_Credits                           
+0000c6c1  OpenComm                                                 
+0000c8b5  SCO_Close_Connection                                     
+0000caa5  HFRE_Enable_Remote_Indicator_Event_Notification          
+0000ce6f  SDP_Add_Attribute                                        
+0000cf61  HFRE_Enable_Remote_Call_Line_Identification_Notification 
+0000d141  L2CA_Get_Link_Connection_State                           
+0000d3fd  GAP_Query_Remote_Device_Name                             
+0000d5c5  HFRE_Close_Port                                          
+0000d6a5  HFRE_Setup_Audio_Connection                              
+0000d865  SPP_Open_Server_Port                                     
+0000da25  HFRE_Send_Select_Codec                                   
+0000dbdd  SPP_Send_Break                                           
+0000dcb9  ReconfigureComm                                          
+0000dd91  GAP_Set_Pairability_Mode                                 
+0000e011  GAP_Initialize                                           
+0000e1b1  HFRE_Query_Remote_Call_Holding_Multiparty_Service_Support
+0000e27d  _RFCOMM_Parameter_Negotiation_Response                   
+0000e349  _RFCOMM_Release_Request                                  
+0000e415  SCO_Add_Connection                                       
+0000e4df  SPP_Port_Status                                          
+0000e671  HCI_OpenDriver                                           
+0000ea39  RFCOMM_Initialize                                        
+0000ec75  _HCI_Accept_Synchronous_Connection_Request               
+0000eded  HFRE_Query_Remote_Control_Indicator_Status               
+0000ef5d  SDP_Initialize                                           
+0000f015  _HCI_Setup_Synchronous_Connection                        
+0000f0cd  _L2CA_Enhanced_Data_Write                                
+0000f185  HFRE_Close_Server_Port                                   
+0000f2ed  SendCommPacket                                           
+0000f3a1  GAP_Cancel_Bonding                                       
+0000f453  TWUART_Reconfigure                                       
+0000f505  _L2CA_Connect_Response                                   
+0000f665  TWUART_Initialize                                        
+0000f711  GAP_Authenticate_Remote_Device                           
+0000f865  HFRE_Hang_Up_Call                                        
+0000fb97  _RFCOMM_Open_Response                                    
+0000fd79  HFRE_Answer_Incoming_Call                                
+0000feb9  BSC_Shutdown                                             
+0000fff1  TWUART_TransmitBytes                                     
+0001008d  _HCI_Host_Number_Of_Completed_Packets                    
+00010129  _HCI_Set_Event_Filter                                    
+000104bd  _RFCOMM_Modem_Status                                     
+00010555  _RFCOMM_Register_Server_Channel                          
+00010683  HCI_Reset                                                
+00010843  GAP_Set_Encryption_Mode                                  
+00010b19  _L2CA_Disconnect_Request                                 
+00010ba9  _RFCOMM_Remote_Port_Negotiation_Response                 
+00010de1  HCI_Cleanup                                              
+00010ef9  SCO_Cleanup                                              
+00010f85  _HCI_Periodic_Inquiry_Mode                               
+0001109b  _L2CA_Config_Response                                    
+000111ad  HCILL_TransmitBytes                                      
+00011449  SPP_Initialize                                           
+000114cd  _HCI_Remote_Name_Request                                 
+00011551  SPP_Line_Status                                          
+000115d5  HCILL_ReceiveBytes                                       
+000117d5  _HCI_Create_Connection                                   
+00011855  BSC_AuthenticateDevice                                   
+000118d3  GAP_Cleanup                                              
+000119cd  L2CA_Register_Fixed_Channel                              
+00011ac5  _HCI_Change_Local_Name                                   
+00011b41  _HCI_Remote_OOB_Data_Request_Reply                       
+00011d29  GAP_Query_Local_Device_Name                              
+00011da1  _HCI_Inquiry                                             
+00011f05  SDP_Delete_Service_Record                                
+00011f7d  HFRE_Release_Audio_Connection                            
+00011ff1  L2CAP_Cleanup                                            
+00012149  BSC_DisableFeature                                       
+000121b9  BTPS_StartTimer                                          
+00012229  HCI_CloseDriver                                          
+00012309  _L2CA_Flush_Channel_Data                                 
+00012455  BSC_AddGenericListEntry                                  
+0001252d  GAP_LE_Enable                                            
+00012597  SPP_Close_Server_Port                                    
+000128c7  SCO_Un_Register_Callback                                 
+0001292b  HCI_Schedule_Asynchronous_Callback                       
+00012a51  AdjustSharedBuffer                                       
+00012ab1  BSC_DeleteGenericListEntry                               
+00012b71  HCI_CancelPacket                                         
+00012bd1  HCI_ReconfigureDriver                                    
+00012cf1  SPP_Respond_Port_Information                             
+00012dad  HCI_UnRegisterCallback                                   
+00012f1d  _HCI_Read_Local_Name                                     
+0001302b  BSC_EnableFeature                                        
+0001318b  TWUART_Resynchronize                                     
+000131e3  WriteDataElementSequenceHeader                           
+00013291  GAP_End_Bonding                                          
+00013391  BTPS_StopTimer                                           
+00013439  GAP_Set_Connectability_Mode                              
+000134e1  _HCI_Read_Local_Version_Information                      
+0001367d  _HCI_User_Passkey_Request_Reply                          
+000136cf  _L2CA_Register_PSM                                       
+000137c1  GAP_LE_Advertising_Disable                               
+00013811  _HCI_IO_Capability_Request_Reply                         
+00013861  _HCI_Read_Buffer_Size                                    
+00013995  SCO_Query_Data_Format                                    
+00013a79  _HCI_LE_Set_Scan_Enable                                  
+00013b59  BTPS_ChangeTimer                                         
+00013be9  CleanupCOMMList                                          
+00013c79  HCI_ChangeSCOConfiguration                               
+00013d09  _RFCOMM_Line_Status_Change                               
+00013d51  _RFCOMM_Set_System_Parameters                            
+00013d99  BSC_AddGenericListEntry_Actual                           
+00013e25  CloseComm                                                
+00013ef1  SDP_Cleanup                                              
+000140c3  L2CA_Set_Link_Connection_Configuration                   
+00014149  BTPS_InitializeTimerModule                               
+00014189  GAP_LE_Cancel_Scan                                       
+000141c9  GetAccess                                                
+00014209  SPP_Close_Port                                           
+00014249  _HCI_LE_Set_Advertise_Enable                             
+00014289  _HCI_Write_Current_IAC_LAP                               
+00014435  GAP_Query_Connection_Handle                              
+00014471  HCI_Command_Supported                                    
+000144ad  HCI_ProcessHCIDriverInformation                          
+00014525  _HCI_Delete_Stored_Link_Key                              
+000145d5  HCI_Reconfigure_Driver                                   
+0001460f  _HCI_Link_Key_Request_Reply                              
+00014649  _HCI_PIN_Code_Request_Reply                              
+00014683  _HCI_Read_Local_Supported_Features                       
+000146f5  ChangeCommSCOConfiguration                               
+00014765  CompareBluetoothAddress                                  
+0001480d  _HCI_LE_Read_Buffer_Size                                 
+00014845  _HCI_Read_BD_ADDR                                        
+0001487d  _HCI_Read_LE_Host_Supported                              
+000148b5  _HCI_Read_Local_Supported_Commands                       
+000148ed  _HCI_Write_LE_Host_Supported                             
+0001495b  BSC_SearchGenericListEntry                               
+00014a33  GOEP_Initialize                                          
+00014a9f  _HCI_Read_Class_of_Device                                
+00014ba7  GAP_LE_Cleanup                                           
+00014bdb  QuerySharedBuffer                                        
+00014c43  _HCI_Accept_Connection_Request                           
+00014c77  _HCI_IO_Capability_Request_Negative_Reply                
+00014cab  _HCI_Reject_Connection_Request                           
+00014cdf  _HCI_Send_Keypress_Notification                          
+00014e0d  GAP_Register_Remote_Authentication                       
+00014e3f  HCI_Change_SCO_Configuration_Handles                     
+00014e71  HCI_Delete_Stored_Link_Key                               
+00014ea3  _HCI_LE_Read_White_List_Size                             
+00014ed5  _HCI_Read_Scan_Enable                                    
+00014f07  _HCI_Read_Simple_Pairing_Mode                            
+00014f39  _HCI_Read_Voice_Setting                                  
+00014f6b  _HCI_Set_Event_Mask                                      
+00014f9d  _HCI_Write_Automatic_Flush_Timeout                       
+00014fcf  _HCI_Write_Class_of_Device                               
+00015001  _HCI_Write_Link_Supervision_Timeout                      
+000150c5  HCI_ChangeSCOConfigurationHandles                        
+000150f5  HCI_Set_Event_Filter                                     
+00015185  _HCI_Create_Connection_Cancel                            
+000151b5  _HCI_Link_Key_Request_Negative_Reply                     
+000151e5  _HCI_PIN_Code_Request_Negative_Reply                     
+00015215  _HCI_Remote_OOB_Data_Request_Negative_Reply              
+00015245  _HCI_User_Confirmation_Request_Negative_Reply            
+00015275  _HCI_User_Confirmation_Request_Reply                     
+000152a5  _HCI_User_Passkey_Request_Negative_Reply                 
+00015445  GAP_Query_Class_Of_Device                                
+00015473  GAP_Query_Local_BD_ADDR                                  
+000154a1  GAP_Set_Local_Device_Name                                
+000154cf  TWUART_Shutdown                                          
+000154fd  _HCI_Disconnect                                          
+00015559  _HCI_Read_Remote_Extended_Features                       
+00015587  _HCI_Set_Connection_Encryption                           
+000155e3  _RFCOMM_Un_Register_Server_Channel                       
+00015695  HCI_Read_Local_Supported_Features                        
+000156c1  HCI_Version_Supported                                    
+000156ed  RFCOMM_Cleanup                                           
+00015719  _HCI_Authentication_Requested                            
+00015745  _HCI_Flush                                               
+00015771  _HCI_Write_Default_Link_Policy_Settings                  
+0001579d  _HCI_Write_Encryption_Mode                               
+000157c9  _HCI_Write_SCO_Flow_Control_Enable                       
+000157f5  _HCI_Write_Scan_Enable                                   
+00015821  _HCI_Write_Simple_Pairing_Mode                           
+0001584d  _HCI_Write_Voice_Setting                                 
+00015879  AcquireGAPLEContext                                      
+00015975  GOEP_Cleanup                                             
+0001599f  HCILL_Initialize                                         
+000159c9  HCI_Change_SCO_Configuration                             
+000159f3  SPP_Cleanup                                              
+00015a1d  _HCI_Enable_Device_Under_Test_Mode                       
+00015a71  AcquireBluetoothStackInformation                         
+00015bb1  HCI_Enable_Device_Under_Test_Mode                        
+00015bd9  HCI_Write_Default_Link_Policy_Settings                   
+00015c01  HCI_Write_SCO_Flow_Control_Enable                        
+00015c29  HCI_Write_Scan_Enable                                    
+00015c51  HCI_Write_Voice_Setting                                  
+00015d3b  BSC_RegisterEventCallback                                
+00015dd3  GAP_Set_Class_Of_Device                                  
+00015df9  HCI_Build_ACL_Packet_Type_Mask                           
+00015f23  HCI_Query_LE_Controller_Support                          
+00015f49  ProcessComm                                              
+00015f91  VerifySharedBufferPointer                                
+00015fd7  BSC_GetNextGenericListEntry                              
+00015ff7  BSC_QueryActiveFeatures                                  
+00016019  BTPS_CleanupTimerModule                                  
+00016059  CompareNULLBluetoothAddress                              
+00016079  HCILL_Reconfigure                                        
+00016099  HCILL_Shutdown                                           
+000160f9  _L2CA_Disconnect_Response                                
+00016137  BSC_FreeGenericListEntryList                             
+00016321  InitializeBSCModule                                      
+00016339  InitializeCOMMList                                       
+00016351  InitializeHandsFreeModule                                
+0001641b  _RFCOMM_Send_Data                                        
+00016431  BTPS_ProcessAsynchronousTimers                           
+00016599  HCI_Send_ACL_Data                                        
+000165ad  HCI_Send_SCO_Data                                        
+00016795  BSC_UnRegisterEventCallback                              
+000167dd  _RFCOMM_Send_Credits                                     
+0001686d  _L2CA_Data_Write                                         
+0001687b  BSC_FreeGenericListEntryMemory                           
+000168ad  HCILL_Resynchronize                                      
+000168b7  HCI_RegisterACLDataCallback                              
+000168c1  HCI_RegisterEventCallback                                
+000168cb  HCI_RegisterSCODataCallback                              
+000168d5  HCI_Register_ACL_Data_Callback                           
+000168df  HCI_Register_Event_Callback                              
+000168e9  HCI_Register_SCO_Data_Callback                           
+000168f3  ReleaseGAPLEContext                                      
+000168fd  SCO_Register_Synchronous_Connect_Request_Callback        
+00016909  GetCertPtr                                               
+00016979  BSC_AcquireListLock                                      
+0001697d  BSC_LockBluetoothStack                                   
+00016981  GetCertCurrentDate                                       
+00016985  GetCertLength                                            
+00016989  InitializeCertificateModule                              
+0001698d  OTP_Initialize                                           
+0001a0a5  ProcessCommandLine                                       
+0001a8f9  InitializeApplication                                    
+0001abc9  VS_Update_UART_Baud_Rate                                 
+0001ac73  VS_Update_HCILL_Parameters                               
+0001acf1  VS_Set_Max_Output_Power                                  
+0001af39  VS_Set_Bluetooth_Address                                 
+0001afa9  VS_PCM_Codec_Config                                      
+0001b093  VS_Enable_Sleep_Mode                                     
+0001b115  VS_Enable_RF_SIG_Test_Mode                               
+0001b179  VS_Enable_FCC_Test_Mode                                  
+0001b36b  VS_EnableWBS                                             
+0001b3f5  VS_DisableWBS                                            
+0001b477  VS_AVPR_Enable                                           
+0001b4f1  VS_AVPR_Debug                                            
+0001b563  VS_A3DP_Stop_Stream                                      
+0001b5d9  VS_A3DP_Start_Stream                                     
+0001b63d  VS_A3DP_Sink_Stop_Stream                                 
+0001b69d  VS_A3DP_Sink_Start_Stream                                
+0001b6fd  VS_A3DP_Sink_Open_Stream                                 
+0001b773  VS_A3DP_Sink_Codec_Configuration                         
+0001b815  VS_A3DP_Sink_Close_Stream                                
+0001b871  VS_A3DP_Open_Stream                                      
+0001b8f9  VS_A3DP_Multi_Room_Mode                                  
+0001b961  VS_A3DP_Codec_Configuration                              
+0001ba11  VS_A3DP_Close_Stream                                     
+0001ba75  ustrncpy                                                 
+0001ba9f  uvsnprintf                                               
+0001bcd1  ustrtoul                                                 
+0001bd73  ustrtof                                                  
+0001bebf  ustrlen                                                  
+0001bed1  ustrncmp                                                 
+0001bf07  ustrstr                                                  
+0001bf47  ustrncasecmp                                             
+0001bf91  ustrcmp                                                  
+0001bf99  ustrcasecmp                                              
+0001bfa1  usrand                                                   
+0001bfa7  usprintf                                                 
+0001bfc7  usnprintf                                                
+0001bfe1  urand                                                    
+0001bff5  ulocaltime                                               
+0001c0e9  umktime                                                  
+0001c151  BTPS_MemCopy                                             
+0001c155  BTPS_WaitMailbox                                         
+0001c18f  BTPS_TestDebugZone                                       
+0001c197  BTPS_StringCopy                                          
+0001c19b  BTPS_SetDebugMask                                        
+0001c1a1  BTPS_QueryMailbox                                        
+0001c1b1  BTPS_GetTickCount                                        
+0001c1c1  BTPS_ProcessScheduler                                    
+0001c235  BTPS_OutputMessage                                       
+0001c267  BTPS_MemMove                                             
+0001c26b  BTPS_MemInitialize                                       
+0001c26f  BTPS_MemCompareI                                         
+0001c2b5  BTPS_MemCompare                                          
+0001c2b9  BTPS_Init                                                
+0001c35f  BTPS_FreeMemory                                          
+0001c367  BTPS_ExecuteScheduler                                    
+0001c36f  BTPS_DumpData                                            
+0001c475  BTPS_DeleteMailbox                                       
+0001c4bd  BTPS_DeleteFunctionFromScheduler                         
+0001c539  BTPS_Delay                                               
+0001c551  BTPS_DeInit                                              
+0001c651  BTPS_AllocateMemory                                      
+0001c65b  BTPS_CreateMailbox                                       
+0001c69d  BTPS_AddMailbox                                          
+0001c6d9  BTPS_AddFunctionToScheduler                              
+0001c86b  HCITR_UARTIntHandler                                     
+0001c88b  HCITR_COMWrite                                           
+0001c93b  HCITR_COMReconfigure                                     
+0001c961  HCITR_COMProcess                                         
+0001ca15  HCITR_COMOpen                                            
+0001cb45  HCITR_COMClose                                           
+0001cbc5  TimerIntHandler                                          
+0001cbdd  HAL_NV_DataWrite                                         
+0001cbe5  HAL_NV_DataRead                                          
+0001cbe9  HAL_LedToggle                                            
+0001cc09  HAL_LedOn                                                
+0001cc17  HAL_LedOff                                               
+0001cc25  HAL_GetTickCount                                         
+0001cc65  HAL_ConsoleWrite                                         
+0001cd15  HAL_ConsoleRead                                          
+0001cd93  HAL_ConfigureHardware                                    
+0001cec9  HAL_ButtonPressed                                        
+0001cf21  ConsoleIntHandler                                        
+0001cf81  HCI_VS_InitializeBeforeHCIReset                          
+0001cf85  HCI_VS_InitializeBeforeHCIOpen                           
+0001cfa5  HCI_VS_InitializeBeforeHCIClose                          
+0001d043  HCI_VS_InitializeAfterHCIReset                           
+0001d09f  HCI_VS_InitializeAfterHCIOpen                            
+0001d0a3  HCI_VS_InitializeAfterHCIClose                           
+0001d0a7  HCI_VS_EnableFeature                                     
+0001d133  HCI_VS_DisableFeature                                    
+0001d21f  main                                                     
+0001d33d  GPIOPadConfigSet                                         
+0001d46f  __aeabi_idiv0                                            
+0001d471  SysCtlClockSet                                           
+0001d565  __aeabi_memcpy                                           
+0001d565  __aeabi_memcpy4                                          
+0001d565  __aeabi_memcpy8                                          
+0001d565  memcpy                                                   
+0001d601  __aeabi_memclr                                           
+0001d601  __aeabi_memclr4                                          
+0001d601  __aeabi_memclr8                                          
+0001d603  __aeabi_memset                                           
+0001d603  __aeabi_memset4                                          
+0001d603  __aeabi_memset8                                          
+0001d609  memset                                                   
+0001d67b  __mpu_init                                               
+0001d67d  __TI_auto_init                                           
+0001d757  _system_post_cinit                                       
+0001d759  IntDisable                                               
+0001d7c1  IntEnable                                                
+0001d829  TimerConfigure                                           
+0001d889  _c_int00                                                 
+0001d8dd  C$$EXIT                                                  
+0001d8e1  abort                                                    
+0001d8e9  exit                                                     
+0001d931  copy_in                                                  
+0001d97d  GPIOPinConfigure                                         
+0001d9c5  UARTConfigSetExpClk                                      
+0001da0b  __aeabi_uidiv                                            
+0001da0b  __aeabi_uidivmod                                         
+0001da4d  SysCtlPeripheralEnable                                   
+0001da81  GPIODirModeSet                                           
+0001daab  memmove                                                  
+0001dacf  memcmp                                                   
+0001daf1  UARTDisable                                              
+0001db11  GPIOPinTypeGPIOOutput                                    
+0001db29  TimerDisable                                             
+0001db41  _args_main                                               
+0001db59  UARTEnable                                               
+0001db6d  _register_unlock                                         
+0001db73  _register_lock                                           
+0001db7b  _nop                                                     
+0001db81  strcpy                                                   
+0001db95  BTPS_StringLength                                        
+0001db95  strlen                                                   
+0001dba9  GPIOPinTypeUART                                          
+0001dbbb  TimerLoadSet                                             
+0001dbcd  TimerPrescaleSet                                         
+0001dbdf  IntMasterEnable                                          
+0001dbef  TimerEnable                                              
+0001dbfd  __TI_decompress_none                                     
+0001dc0b  CPUcpsie                                                 
+0001dc17  UARTFlowControlSet                                       
+0001dc23  ResetISR                                                 
+0001dc2f  UARTIntDisable                                           
+0001dc39  UARTIntStatus                                            
+0001dc43  TimerIntEnable                                           
+0001dc4b  UARTIntEnable                                            
+0001dc53  GPIOPinRead                                              
+0001dc59  GPIOPinWrite                                             
+0001dc5f  SysCtlDelay                                              
+0001dc65  __TI_decompress_rle24                                    
+0001dc6b  TimerIntClear                                            
+0001dc6f  UARTIntClear                                             
+0001dc73  _system_pre_init                                         
+0001df74  __TI_Handler_Table_Base                                  
+0001df7c  __TI_CINIT_Base                                          
+0001df7c  __TI_Handler_Table_Limit                                 
+0001df8c  __TI_CINIT_Limit                                         
+20004e9c  __stack                                                  
+2000566c  __STACK_END                                              
+2000566c  __STACK_TOP                                              
+20005754  __TI_cleanup_ptr                                         
+20005758  __TI_dtors_ptr                                           
+2000575c  __TI_enable_exit_profile_output                          
+2000579c  _lock                                                    
+200057a0  _unlock                                                  
+200057c0  main_func_sp                                             
+ffffffff  __TI_pprof_out_hndl                                      
+ffffffff  __TI_prof_data_size                                      
+ffffffff  __TI_prof_data_start                                     
+ffffffff  __binit__                                                
+ffffffff  __c_args__                                               
+ffffffff  binit                                                    
+UNDEFED   SHT$$INIT_ARRAY$$Base                                    
+UNDEFED   SHT$$INIT_ARRAY$$Limit                                   
+
+[438 symbols]
